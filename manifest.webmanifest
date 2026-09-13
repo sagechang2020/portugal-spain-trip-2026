@@ -1,0 +1,11 @@
+{
+  "name":"葡西之旅 2026 · 现场执行攻略",
+  "short_name":"葡西之旅",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#f4f5f0",
+  "theme_color":"#0d3b42",
+  "description":"2026 Portugal / Spain travel execution guide",
+  "icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
