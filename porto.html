@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#4a235a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="葡西之旅" />
+  <meta name="description" content="2026 葡萄牙 / 西班牙旅行现场执行攻略 · Porto" />
+  <title>葡西之旅 2026 · Porto</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icon.svg" />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./porto.css" />
+</head>
+<body class="porto-page">
+  <header class="hero hero--porto">
+    <div class="hero__topline"><span class="eyebrow">葡萄牙 / 西班牙之旅 2026</span><span id="offlineBadge" class="badge badge--soft" hidden>离线模式</span></div>
+    <h1>波尔图 <span>Porto · Vila Nova de Gaia</span></h1>
+    <p>10/4 周日 → 10/5 周一 · 两人现场执行版</p>
+    <div class="hero__chips"><a class="hero-chip-link" href="./lisbon.html">← Lisbon</a><span>🚄 AP133 → Porto</span><span>⚽ Portugal × Norway · 已购票</span><span>✈ OPO → MAD</span></div>
+  </header>
+  <nav class="day-tabs" aria-label="波尔图行程日期">
+    <button class="day-tab is-active" data-day="today">现在</button><button class="day-tab" data-day="1004">10/4 周日</button><button class="day-tab" data-day="1005">10/5 周一</button>
+  </nav>
+  <main>
+    <section id="nowCard" class="now-card card"></section>
+    <section class="section" id="overviewSection">
+      <div class="section-title"><div><span class="kicker">ONE GLANCE</span><h2>一眼总览</h2></div><span class="updated">执行基线更新：2026-09-13</span></div>
+      <div class="overview-grid porto-overview">
+        <article class="overview-item overview-item--accent"><strong>10/4 周日</strong><span>16:48 抵达 Porto</span><p>Campanhã → HF Tuela → Mercado Bom Sucesso → Metro → Estádio do Dragão → 19:45 葡萄牙 vs 挪威</p></article>
+        <article class="overview-item"><strong>10/5 周一</strong><span>20:15 飞 Madrid</span><p>São Bento → Sé → Luís I → Gaia → Ribeira → 可选 Bolsa → Taylor's → 取行李 → OPO</p></article>
+      </div>
+    </section>
+    <section class="section ticket-confirmed"><div class="ticket-confirmed__icon">🎟️</div><div><span class="kicker">MATCH LOCKED</span><h2>比赛已确认 · 两张官方票已购</h2><p><b>10/4 周日 19:45</b> · Portugal vs Norway · Estádio do Dragão。现场入场信息：<b>Porta 12 · Setor 14 · Fila 46 · Lugares 10–11 · CAT2 / Lateral Nascente</b>。</p><small>公开网站不保存票券二维码、完整票号或购票人姓名。出门前把两张原始 PDF / 手机钱包票券另存到手机离线可访问位置。</small></div></section>
+    <section class="section map-section">
+      <div class="section-title"><div><span class="kicker">EXECUTION MAP</span><h2>交互式执行地图</h2></div><button id="fitMapBtn" class="mini-btn">显示全部</button></div>
+      <div class="map-help">点地图编号可查看日期、时间、任务和导航；编号按现场实际执行顺序。</div><div id="map" aria-label="波尔图旅行执行地图"></div>
+      <div class="map-legend"><span><i class="dot dot--1004"></i>10/4 比赛日</span><span><i class="dot dot--1005"></i>10/5 主游览日</span></div>
+    </section>
+    <section class="section" id="timelineSection"><div class="section-title"><div><span class="kicker">TIMELINE</span><h2>逐日执行</h2></div><span class="section-note">点击一项 → 地图定位</span></div><div id="timeline"></div></section>
+    <section class="section"><div class="section-title"><div><span class="kicker">REAL VIEWS</span><h2>实景预览</h2></div><span class="section-note">真实网络图片</span></div><div class="photo-grid" id="photoGrid"></div></section>
+    <section class="section compact-sections">
+      <details open><summary>🚇 交通 / Andante <span>Transport</span></summary><div class="details-body"><p><b>10/4 到达：</b>Campanhã → HF Tuela 直接 Uber/Bolt；有行李且后面有比赛，不做公共交通折腾。</p><p><b>比赛：</b>HF Tuela 步行到 Casa da Música；乘往 <b>Estádio do Dragão</b> 方向的 A/B/F 等可直达班次，以站内屏幕为准。赛后仍优先 Metro，避免球场散场打车拥堵。</p><p><b>10/5 机场：</b>Casa da Música → Aeroporto，E Line；当前约 15 分钟级别班距。Casa da Música / Aeroporto 支持 contactless pilot，机场段相当于 <b>Z4 €2.30/人</b>。若下一班 E 线等待 &gt;15 分钟或时间链落后，直接 Uber/Bolt 去 OPO。</p><div class="mini-table"><div><b>10/4</b><span>Campanhã → HF Tuela</span><em>Uber / Bolt</em></div><div><b>10/4</b><span>Casa da Música → Estádio do Dragão</span><em>Metro</em></div><div><b>10/5</b><span>HF Tuela → São Bento</span><em>Uber / Bolt</em></div><div><b>10/5</b><span>Ribeira/Bolsa → Taylor's</span><em>Uber / Bolt</em></div><div><b>10/5</b><span>Casa da Música → OPO</span><em>E Line / 迟则打车</em></div></div></div></details>
+      <details><summary>🏨 HF Tuela / 行李 <span>Hotel & luggage</span></summary><div class="details-body"><p><b>官方当前规则：</b>check-in 从 15:00 起，check-out 12:00 前；酒店明确提供入住前 / 退房后行李寄存。</p><p><b>10/5：</b>08:20–08:35 退房并寄存两件大行李，空手游览；Taylor's 后直接回酒店取行李，把酒放进托运行李，再去机场。</p><p><b>托运行李：</b>Porto → Madrid 每人 1 件 10 kg；买酒后现场重新估算重量，不要把 2–4 瓶当成必须完成的数量。</p></div></details>
+      <details><summary>⚽ 比赛票 / 入场 <span>Portugal × Norway</span></summary><div class="details-body"><p><b>已确认：</b>10/4 19:45 · Estádio do Dragão · 两张官方票。</p><div class="ticket-grid"><article><strong>入口</strong><span>Porta 12</span><b>按票面入口进场</b></article><article><strong>区域</strong><span>Setor 14 · Fila 46</span><b>Lateral Nascente · CAT2</b></article><article><strong>座位</strong><span>Lugares 10–11</span><b>相邻座位</b></article><article><strong>到场目标</strong><span>约18:45</span><b>距开球约1小时</b></article></div><p class="warning">票面规定每张票只允许一次入场。不要把二维码截图或完整票号上传到公开网页 / 社交媒体。</p></div></details>
+      <details><summary>🍽 饮食 <span>Food</span></summary><div class="details-body"><p><b>10/4 17:35–18:05：</b>Mercado Bom Sucesso 快速晚餐；周日餐饮摊位普遍营业至约 23:00，但我们只留 30 分钟。不要排队等单一摊位。</p><p><b>10/5 早餐：</b>Confeitaria Petúlia，Rua Júlio Dinis 775，周一当前 08:00 起营业。</p><p><b>10/5 午餐：</b>Casa Guedes Gaia 为主；官方当前周一约 11:00–23:00。等待 &gt;15 分钟换 Mercado Beira-Rio。</p></div></details>
+      <details><summary>🍷 Taylor's / 买酒 <span>Cellar & shopping</span></summary><div class="details-body"><p><b>核心项目：</b>13:30–15:00 Taylor's Port Cellars。成人 <b>€25/人</b>；自助参观，普通话音频可用，包含 Chip Dry、LBV、10-Year-Old Tawny 三款品鉴。</p><p><b>当前开放：</b>酒窖 10:00–18:15；Tasting Room 10:00–19:30；Porto Store 10:00–14:00 / 15:00–19:00。</p><ol class="priority-list"><li>先问：<b>Do you have any Porto-exclusive or travel-exclusive bottles or gift sets?</b></li><li>优先 cellar / Porto / travel exclusive、礼盒或特殊包装。</li><li>常见国际流通的 LBV / 10YO Tawny 优先级较低。</li><li>预算允许再考虑 2–4 瓶总量；最终由两件 10 kg 托运行李重量决定。</li></ol></div></details>
+      <details><summary>🏛 Palácio da Bolsa <span>Optional only</span></summary><div class="details-body"><p><b>只能顺路：</b>12:35 左右经过时现场问 <b>“Next English tour?”</b>。</p><p>当前官方：09:00–18:30，成人 <b>€14</b>；必须导览，约 30 分钟；葡/西/法/英可选，但语言按到场顺序安排。</p><p class="warning"><b>只有下一场英语导览大约 12:50 前能开始才进入。</b>否则直接跳过，保证 Taylor's 13:30。</p></div></details>
+      <details><summary>💶 两人预算 <span>Budget</span></summary><div class="details-body"><div class="budget-row"><span>HF Tuela 工作基准</span><b>~CNY 715</b></div><div class="budget-row"><span>饮食</span><b>~€65–95</b></div><div class="budget-row"><span>Taylor's</span><b>€50</b></div><div class="budget-row"><span>Palácio da Bolsa（可选）</span><b>+€28</b></div><div class="budget-row"><span>市内交通</span><b>~€35–50</b></div><div class="budget-row"><span>⚽ 已购球票</span><b>€60 / 2人</b></div><div class="budget-row budget-row--total"><span>基础波尔图支出（不含酒/长途交通）</span><b>~€242–315 + 球票已付€60</b></div><p class="muted">不含 Lisbon→Porto 火车、Porto→Madrid 航班、买酒和购物。买酒另预留约 €60–160+。</p></div></details>
+      <details class="danger-details" open><summary>⚠️ 晚点怎么删 <span>Contingency</span></summary><div class="details-body"><ol class="priority-list"><li><b>AP133 晚点 ≤20–30 分钟：</b>仍按酒店 → 快餐 → Metro → 球场执行。</li><li><b>晚点 &gt;30 分钟：</b>压缩 Mercado Bom Sucesso 吃饭；必要时只买能带走的。</li><li><b>晚点 &gt;45 分钟：</b>Campanhã → HF Tuela 只放行李 → 直接去 Casa da Música / 球场，比赛优先。</li><li><b>10/5 上午落后：</b>Palácio da Bolsa 第一个删除。</li><li><b>午餐排队：</b>15 分钟上限，立即换 Mercado Beira-Rio。</li><li><b>Taylor's 后落后：</b>缩短商店购物，不压机场缓冲。</li><li><b>16:10 后机场链条不顺：</b>E Line 等待 &gt;15 分钟就直接 Uber/Bolt OPO。</li></ol></div></details>
+    </section>
+    <section class="section source-note"><h2>现场原则</h2><p><b>不加入</b> Livraria Lello 内部；<b>不加入</b> Clérigos Tower 内部/登塔；<b>Palácio da Bolsa</b> 只在英语场次马上开始时进入；<b>Taylor's</b> 保持最后一个旅游项目。</p><p>10/4 比赛已经成为硬锚点；10/5 16:10 左右开始机场链条后，不再增加任何景点。</p></section>
+    <section class="section coming-soon"><span class="kicker">CITY SWITCH</span><h2>葡西之旅 2026</h2><div class="city-strip"><a href="./index.html">Madeira ✓</a><a href="./lisbon.html">Lisbon ✓</a><span class="is-current">Porto ✓</span><span>Madrid</span></div></section>
+  </main>
+  <footer>Portugal / Spain Trip 2026 · Porto 手机现场执行版</footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script><script src="./porto.js"></script>
+</body></html>
