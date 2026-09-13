@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#8b1e2d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="葡西之旅" />
+  <meta name="description" content="2026 葡萄牙 / 西班牙旅行现场执行攻略 · Madrid" />
+  <title>葡西之旅 2026 · Madrid</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icon.svg" />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./madrid.css" />
+</head>
+<body class="madrid-page">
+  <header class="hero hero--madrid">
+    <div class="hero__topline"><span class="eyebrow">葡萄牙 / 西班牙之旅 2026</span><span id="offlineBadge" class="badge badge--soft" hidden>离线模式</span></div>
+    <h1>马德里 <span>Madrid</span></h1>
+    <p>10/5 周一 → 10/7 周三 · 两人现场执行版</p>
+    <div class="hero__chips"><a class="hero-chip-link" href="./porto.html">← Porto</a><span>✈ FR5483 → MAD T1</span><span>🏨 ibis Madrid Getafe</span><span>✈ U22050 → MAN T1</span></div>
+  </header>
+
+  <nav class="day-tabs" aria-label="马德里行程日期">
+    <button class="day-tab is-active" data-day="today">现在</button>
+    <button class="day-tab" data-day="1005">10/5 周一</button>
+    <button class="day-tab" data-day="1006">10/6 周二</button>
+    <button class="day-tab" data-day="1007">10/7 周三</button>
+  </nav>
+
+  <main>
+    <section id="nowCard" class="now-card card"></section>
+
+    <section class="section" id="overviewSection">
+      <div class="section-title"><div><span class="kicker">ONE GLANCE</span><h2>一眼总览</h2></div><span class="updated">执行基线更新：2026-09-13</span></div>
+      <div class="overview-grid">
+        <article class="overview-item"><strong>10/5 周一</strong><span>22:30 抵达 MAD T1</span><p>机场 → ibis Madrid Getafe → 睡觉；不安排夜游</p></article>
+        <article class="overview-item overview-item--accent"><strong>10/6 周二</strong><span>双核心日</span><p>Bernabéu Tour → Official Store → 午饭 → Palacio Real 内部 → Plaza de España → Debod 日落</p></article>
+        <article class="overview-item"><strong>10/7 周三</strong><span>23:15 飞 MAN</span><p>退房 → Golden Locker → Gran Vía → Sol → Plaza Mayor → San Miguel → 取行李 → MAD T1</p></article>
+      </div>
+    </section>
+
+    <section class="section core-lock">
+      <div class="core-lock__icon">🔒</div>
+      <div><span class="kicker">CORE LOCKED</span><h2>10/6 两个核心项目不可牺牲</h2>
+      <p><b>Tour Bernabéu</b> 与 <b>Palacio Real de Madrid 内部</b> 是当天最高优先级；Debod 天气差或时间落后时第一个删除。</p></div>
+    </section>
+
+    <section class="section map-section">
+      <div class="section-title"><div><span class="kicker">EXECUTION MAP</span><h2>交互式执行地图</h2></div><button id="fitMapBtn" class="mini-btn">显示全部</button></div>
+      <div class="map-help">点地图编号可查看日期、时间、任务和导航；编号按现场实际执行顺序。</div>
+      <div id="map" aria-label="马德里旅行执行地图"></div>
+      <div class="map-legend"><span><i class="dot dot--1005"></i>10/5 抵达</span><span><i class="dot dot--1006"></i>10/6 核心日</span><span><i class="dot dot--1007"></i>10/7 离境日</span></div>
+    </section>
+
+    <section class="section" id="timelineSection">
+      <div class="section-title"><div><span class="kicker">TIMELINE</span><h2>逐日执行</h2></div><span class="section-note">点击一项 → 地图定位</span></div>
+      <div id="timeline"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><div><span class="kicker">REAL VIEWS</span><h2>实景预览</h2></div><span class="section-note">真实网络图片</span></div>
+      <div class="photo-grid" id="photoGrid"></div>
+    </section>
+
+    <section class="section compact-sections">
+      <details open>
+        <summary>🚆 Getafe ↔ Madrid / Bernabéu 交通 <span>Transport</span></summary>
+        <div class="details-body">
+          <p><b>Getafe Centro：</b>属于 Cercanías C-4；Getafe → Sol / Nuevos Ministerios 为直达走廊。最简单支付方式是 <b>Renfe Cronos</b>：Visa/Mastercard 实体卡或手机在进站和出站都要拍卡，系统按实际区域自动收单程票价。</p>
+          <p><b>建议：</b>两人各用自己的卡/手机，减少重复拍卡出错。不要为了两天行程提前买复杂通票。</p>
+          <p><b>10/6 Bernabéu：</b>2026 年 Santiago Bernabéu 站施工，L10 的 <b>Cuzco–Nuevos Ministerios</b> 段暂停到年底。到 Nuevos Ministerios 后，换官方免费 <b>S10</b> 替代公交去 Bernabéu；工作日官方班距约 2–3 分钟。</p>
+          <div class="mini-table">
+            <div><b>10/5</b><span>MAD T1 → ibis Getafe</span><em>Uber / official taxi</em></div>
+            <div><b>10/6</b><span>Getafe Centro → Nuevos Ministerios</span><em>Cercanías C-4</em></div>
+            <div><b>10/6</b><span>Nuevos Ministerios → Bernabéu</span><em>S10 replacement bus</em></div>
+            <div><b>10/6</b><span>Bernabéu / lunch → Palacio Real</span><em>Uber 优先省摩擦</em></div>
+            <div><b>10/7</b><span>Getafe Centro → Sol → Plaza España</span><em>C-4 + Metro L3</em></div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>🏨 ibis Madrid Getafe <span>Hotel</span></summary>
+        <div class="details-body">
+          <p><b>官方当前：</b>check-in 从 <b>12:00</b> 起、check-out 至 <b>12:00</b>；24h 前台。早餐周一至周五 <b>06:30–10:30</b>，明确为 <b>hot + cold buffet</b>。</p>
+          <p><b>房型基线：</b>一张 double / queen-type bed + private bathroom；Ctrip 最终付款页仍要确认具体 rate 保证一张大床。</p>
+          <p><b>10/7 不使用酒店寄存作为主方案：</b>虽然酒店有 luggage storage，但回 Getafe 取行李会造成不必要折返。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>⚽ Tour Bernabéu / Official Store <span>Core</span></summary>
+        <div class="details-body">
+          <p><b>Classic Flexible Time：</b>当前官方 <b>€44/人</b>；10/6 周二正常开放 <b>09:00–19:00</b>。Flexible Time 可在所选日期的开放时段内自由到场。</p>
+          <p>当前路线包括 Real Madrid Museum、球场内部全景、dressing rooms、dugouts，并在可用时临时开放 press room；活动日路线仍可能临时缩短。</p>
+          <p><b>执行：</b>目标 10:00 开始，约 12:00 结束；随后给 Official Store 预留 <b>20–30 分钟</b>。</p>
+          <p><b>商店：</b>官方现有 kits、training、fashion、accessories、club merchandise、collectibles 与个性化区。不要预设一定有 Cristiano Ronaldo 专属库存；到现场再看 legends / historical stock，并可询问是否允许 “RONALDO 7” 定制。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>👑 Palacio Real de Madrid <span>Core</span></summary>
+        <div class="details-body">
+          <p><b>10 月开放：</b>周一至周六 <b>10:00–18:00</b>，停止售票和入场比闭馆早 1 小时。</p>
+          <p><b>自助基础票：</b>当前 <b>€18/人</b>；普通自助宫殿参观约 45 分钟。网站按约 14:30–16:00 留出完整缓冲，仍建议提前买官方 timed entry。</p>
+          <p class="warning">王宫可能因官方活动临时关闭。10/6 前 1–2 天再看一次 Patrimonio Nacional 通知；若临时关闭，再单独处理，不提前把 Prado / Retiro 塞进基础路线。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>🌅 Templo de Debod <span>Good-to-have</span></summary>
+        <div class="details-body">
+          <p><b>10/6 日落：</b>约 <b>19:49</b>。计划 18:30 左右到 Debod，主要看外观、城市天际线与日落。</p>
+          <p>官方内部周二 10:00–20:00，19:30 最后入内，免费；但小型室内不是核心。如果要入内，尽量 19:15 前完成，别为了室内错过日落。</p>
+          <p class="warning">天气差、体力差或王宫拖延时，Debod 第一个删除。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>🧳 Golden Locker Plaza España <span>10/7 luggage</span></summary>
+        <div class="details-body">
+          <p><b>地址：</b>Calle Fomento 37, Local 2，靠近 Plaza de España；24h / 365 天自助。</p>
+          <p><b>L 柜当前 €10.90/天</b>，官方说明可放 <b>2 个 10kg cabin suitcases</b>；如果你们箱子尺寸明显更大，应改 XL。</p>
+          <p><b>流程：</b>提前在线预约并付款 → SMS / email 收到入口与 locker code / QR → 现场自助。建议 10/4–10/5 左右确认箱子尺寸后预订，并把地址、确认邮件和二维码同时离线保存到两部手机。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>✈ 10/7 MAD → Manchester <span>Schengen exit</span></summary>
+        <div class="details-body">
+          <p><b>已核：</b>easyJet <b>U22050</b>，10/7 <b>23:15</b> MAD → MAN <b>00:45</b> 次日；easyJet 在 Madrid 使用 <b>T1</b>，Manchester 航线也列在 T1。</p>
+          <p><b>网站目标：</b>约 <b>19:15</b> 从 Golden Locker 一带叫 Uber / taxi，争取 <b>20:00–20:15</b> 抵达 T1，留约 3 小时。</p>
+          <p>你们有托运行李；T1 去英国还需要在安检后完成出境证照流程。easyJet 的最终 bag-drop / gate closing time 以 booking confirmation / app 为准，不拿“关柜时间”当计划到机场的目标。</p>
+          <p class="warning">10/7 是申根停留最后一天。宁可少逛 30–60 分钟，也不压缩机场缓冲。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>🍽 吃饭 <span>Food</span></summary>
+        <div class="details-body">
+          <p><b>早餐：</b>10/6、10/7 都在 ibis 吃完热+冷 buffet 再出发。</p>
+          <p><b>10/6 午饭：</b>Bernabéu Store 后，在附近/去王宫路上找普通、刷卡方便、无需久等的餐厅；排队 &gt;15–20 分钟就换。</p>
+          <p><b>10/6 晚饭：</b>Debod 后在 Plaza de España / Gran Vía 一带灵活解决。</p>
+          <p><b>10/7：</b>Mercado de San Miguel 只短看/吃小食；正餐可在周边普通餐馆。傍晚如果不方便正式吃饭，就机场再吃。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>💶 两人预算 <span>Budget</span></summary>
+        <div class="details-body">
+          <div class="budget-row"><span>ibis 两晚含早工作基准</span><b>~CNY 2,096</b></div>
+          <div class="budget-row"><span>外食</span><b>~€100–150</b></div>
+          <div class="budget-row"><span>Tour Bernabéu Flexible</span><b>€88</b></div>
+          <div class="budget-row"><span>Palacio Real 自助票</span><b>€36</b></div>
+          <div class="budget-row"><span>Golden Locker L</span><b>€10.90</b></div>
+          <div class="budget-row"><span>公共交通</span><b>~€15–25</b></div>
+          <div class="budget-row"><span>机场 / 深夜 Uber / taxi</span><b>~€60–85</b></div>
+          <div class="budget-row budget-row--total"><span>Madrid 工作总预算</span><b>约 CNY 4,500–5,300 等值</b></div>
+          <p class="muted">不含 Porto→Madrid、Madrid→Manchester 航班、Real Madrid 商品和其他购物。酒店 Ctrip 价格仍以最终付款页为准。</p>
+        </div>
+      </details>
+
+      <details class="danger-details" open>
+        <summary>⚠️ 晚点 / 故障怎么删 <span>Contingency</span></summary>
+        <div class="details-body">
+          <ol class="priority-list">
+            <li><b>10/5 FR5483 晚点：</b>无论多晚都机场 → ibis，取消任何临时夜游。</li>
+            <li><b>10/6 C-4 / S10 异常：</b>在最方便的位置直接 Uber 去 Bernabéu，不拿已付核心票换交通省钱。</li>
+            <li><b>10/6 进度落后：</b>先缩短 Plaza de España；再删 Debod。Bernabéu 和王宫内部不删。</li>
+            <li><b>天气差：</b>直接删 Debod。</li>
+            <li><b>10/7 locker 故障：</b>先找另一个自动 locker；必要时才用人工寄存；不要回 Getafe 寄存。</li>
+            <li><b>10/7 时间落后：</b>购物、咖啡、晚饭都可删；19:00 左右必须回 locker 进入机场链条。</li>
+          </ol>
+        </div>
+      </details>
+    </section>
+
+    <section class="section source-note">
+      <h2>现场原则</h2>
+      <p><b>不重新加入</b> Prado + Retiro；<b>不把</b> Debod 升级为核心；<b>不返回 Getafe 取行李</b>；<b>不使用</b>旧的 L10 直达 Bernabéu 路线。</p>
+      <p>10/6 的两个核心是 Tour Bernabéu + Palacio Real interior；10/7 的核心是“市中心 locker → 老城单向走 → T1 提前约3小时”。</p>
+    </section>
+
+    <section class="section coming-soon">
+      <span class="kicker">CITY SWITCH</span><h2>葡西之旅 2026</h2>
+      <div class="city-strip">
+        <a href="./index.html">Madeira ✓</a>
+        <a href="./lisbon.html">Lisbon ✓</a>
+        <a href="./porto.html">Porto ✓</a>
+        <span class="is-current">Madrid ✓</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>Portugal / Spain Trip 2026 · Madrid 手机现场执行版</footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="./madrid.js"></script>
+</body>
+</html>
