@@ -68,13 +68,13 @@ const schedules={
 ]}};
 
 const photos=[
-{title:'商业广场 Praça do Comércio',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Praca%20do%20Comercio%20Lisbon.jpg'},
-{title:'圣乔治城堡 Castelo de São Jorge',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Castelo%20de%20S%C3%A3o%20Jorge%20-%20Lisbon.jpg'},
-{title:'圣卢西亚观景台 Miradouro de Santa Luzia',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Miradouro%20de%20Santa%20Luzia.jpg'},
-{title:'热罗尼莫斯修道院 Mosteiro dos Jerónimos',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Mosteiro%20dos%20Jer%C3%B3nimos%20-Lisboa.jpg'},
-{title:'Jerónimos 回廊 Cloister',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Mosteiro%20dos%20J%C3%A9ronimos.%20The%20Cloister.jpg'},
-{title:'发现者纪念碑 Padrão dos Descobrimentos',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Padr%C3%A3o%20dos%20Descobrimentos%2C%20Lisboa.jpg'},
-{title:'贝伦塔 Torre de Belém',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Torre%20de%20Bel%C3%A9m-%20Lisbon.jpg'}
+{title:'商业广场 Praça do Comércio',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Praca%20do%20Comercio%20Lisbon.jpg',credit:'Iantomferry · CC BY-SA 3.0',source:'https://commons.wikimedia.org/wiki/File:Praca_do_Comercio_Lisbon.jpg'},
+{title:'圣乔治城堡 Castelo de São Jorge',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Castelo%20de%20S%C3%A3o%20Jorge%20-%20Lisbon.jpg',credit:'Ø11 · CC BY-SA 4.0',source:'https://commons.wikimedia.org/wiki/File:Castelo_de_S%C3%A3o_Jorge_-_Lisbon.jpg'},
+{title:'圣卢西亚观景台 Miradouro de Santa Luzia',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Miradouro%20de%20Santa%20Luzia.jpg',credit:'GiacomoAntonini1760 · CC BY-SA 4.0',source:'https://commons.wikimedia.org/wiki/File:Miradouro_de_Santa_Luzia.jpg'},
+{title:'热罗尼莫斯修道院 Mosteiro dos Jerónimos',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Mosteiro%20dos%20Jer%C3%B3nimos%20-Lisboa.jpg',credit:'Ana Correia 28 · CC BY-SA 4.0',source:'https://commons.wikimedia.org/wiki/File:Mosteiro_dos_Jer%C3%B3nimos_-Lisboa.jpg'},
+{title:'Jerónimos 回廊 Cloister',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Mosteiro%20dos%20J%C3%A9ronimos.%20The%20Cloister.jpg',credit:'MFREYNAUD51 · CC BY-SA 4.0',source:'https://commons.wikimedia.org/wiki/File:Mosteiro_dos_J%C3%A9ronimos._The_Cloister.jpg'},
+{title:'发现者纪念碑 Padrão dos Descobrimentos',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Padr%C3%A3o%20dos%20Descobrimentos%2C%20Lisboa.jpg',credit:'Bene Riobó · CC BY-SA 4.0',source:'https://commons.wikimedia.org/wiki/File:Padr%C3%A3o_dos_Descobrimentos,_Lisboa.jpg'},
+{title:'贝伦塔 Torre de Belém',src:'https://commons.wikimedia.org/wiki/Special:FilePath/Torre%20de%20Bel%C3%A9m-%20Lisbon.jpg',credit:'Ana Correia 28 · CC BY-SA 4.0',source:'https://commons.wikimedia.org/wiki/File:Torre_de_Bel%C3%A9m-_Lisbon.jpg'}
 ];
 
 const map=L.map('map',{zoomControl:true}).setView([38.71,-9.16],12);
@@ -95,7 +95,7 @@ map.fitBounds(allBounds.pad(.06));
 document.getElementById('fitMapBtn').addEventListener('click',()=>map.fitBounds(allBounds.pad(.06)));
 
 function renderPhotos(){
-  document.getElementById('photoGrid').innerHTML=photos.map(p=>`<figure class="photo-card"><img src="${p.src}" alt="${p.title}" loading="lazy" referrerpolicy="no-referrer"><figcaption>${p.title}</figcaption></figure>`).join('');
+  document.getElementById('photoGrid').innerHTML=photos.map(p=>`<figure class="photo-card"><img src="${p.src}" alt="${p.title}" loading="lazy" referrerpolicy="no-referrer"><figcaption><span>${p.title}</span><a class="photo-credit" href="${p.source}" target="_blank" rel="noopener">${p.credit}</a></figcaption></figure>`).join('');
 }
 function renderTimeline(days=['1002','1003','1004']){
   const html=days.map(d=>{
