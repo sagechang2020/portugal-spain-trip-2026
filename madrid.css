@@ -1,0 +1,12 @@
+.madrid-page{--deep:#751f2d;--accent:#d8a43a}
+.hero--madrid{background:linear-gradient(145deg,#5f1724,#8b2434 68%,#b56b37)}
+.hero-chip-link{white-space:nowrap;font-size:12px;background:rgba(255,255,255,.18);color:#fff;padding:7px 10px;border-radius:999px;text-decoration:none;font-weight:800}
+.madrid-page .day-tab.is-active{background:#751f2d}
+.madrid-page .overview-item--accent{background:#fff4e4;border-color:#e8c88a}
+.madrid-page .kicker{color:#a96d10}
+.madrid-page .dot--1005{background:#7d4f9a}.madrid-page .dot--1006{background:#751f2d}.madrid-page .dot--1007{background:#c38a28}
+.madrid-page .marker-1005{background:#7d4f9a}.madrid-page .marker-1006{background:#751f2d}.madrid-page .marker-1007{background:#c38a28}
+.core-lock{display:flex;gap:13px;align-items:flex-start;background:#fff8e8;border-color:#ead19d}
+.core-lock__icon{font-size:28px}.core-lock h2{font-size:19px;margin:2px 0 5px}.core-lock p{margin:0;font-size:13px;color:#5c5550}
+.city-strip a{white-space:nowrap;padding:8px 11px;background:#edf0eb;border-radius:999px;font-size:12px;font-weight:800;color:#5c2830;text-decoration:none}
+@media(prefers-color-scheme:dark){.core-lock{background:#30291c;border-color:#5b4d2e}.core-lock p{color:#d7cdbb}.city-strip a{background:#263233;color:#f0d9d9}}
