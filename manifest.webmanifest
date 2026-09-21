@@ -6,6 +6,6 @@
   "display":"standalone",
   "background_color":"#f4f5f0",
   "theme_color":"#0d3b42",
-  "description":"2026 Portugal / Spain travel execution guide",
+  "description":"2026 葡萄牙 / 西班牙手机旅行执行攻略",
   "icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
