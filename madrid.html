@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#8b1e2d" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="葡西之旅" />
+  <meta name="apple-mobile-web-app-title" content="猫狗之旅" />
   <meta name="description" content="2026 葡萄牙 / 西班牙旅行现场执行攻略 · Madrid" />
-  <title>葡西之旅 2026 · Madrid</title>
+  <title>猫狗之旅 2026 · Madrid</title>
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="./icon.svg" />
@@ -19,7 +19,7 @@
 </head>
 <body class="madrid-page">
   <header class="hero hero--madrid">
-    <div class="hero__topline"><span class="eyebrow">葡萄牙 / 西班牙之旅 2026</span><span id="offlineBadge" class="badge badge--soft" hidden>离线模式</span></div>
+    <div class="hero__topline"><span class="eyebrow">猫狗之旅 2026</span><span id="offlineBadge" class="badge badge--soft" hidden>离线模式</span></div>
     <h1>马德里 <span>Madrid</span></h1>
     <p>10/5 周一 → 10/7 周三 · 两人现场执行版</p>
     <div class="hero__chips"><a class="hero-chip-link" href="./porto.html">← Porto</a><span>✈ FR5483 → MAD</span><span>🏨 Vértice Roomspace · 已订</span><span>✈ U22050 → MAN</span></div>
@@ -30,47 +30,37 @@
   <main>
     <section id="nowCard" class="now-card card"></section>
     <section class="section" id="overviewSection">
-      <div class="section-title"><div><span class="kicker">ONE GLANCE</span><h2>一眼总览</h2></div><span class="updated">执行基线更新：2026-09-21</span></div>
+      <div class="section-title"><div><span class="kicker">行程概览</span><h2>一眼总览</h2></div><span class="updated">两人手机执行版</span></div>
       <div class="overview-grid">
         <article class="overview-item"><strong>10/5 周一</strong><span>22:30 抵达 MAD</span><p>机场 → Uber / official taxi → Vértice Roomspace → 睡觉；不安排夜游</p></article>
         <article class="overview-item overview-item--accent"><strong>10/6 周二</strong><span>三项优先任务</span><p>Bernabéu → Palacio Real 14:00 → Moncloa → 625/628/629 → Las Rozas Village · Burberry first</p></article>
         <article class="overview-item"><strong>10/7 周三</strong><span>23:15 飞 MAN</span><p>早餐/退房 → Golden Locker → Old Madrid → 18:25取行李 → ~18:50去 MAD → 如有Tax Free先做DIVA/Customs</p></article>
       </div>
     </section>
-    <section class="section core-lock"><div class="core-lock__icon">🔒</div><div><span class="kicker">CORE LOCKED</span><h2>10/6：Bernabéu + Palacio Real + Las Rozas / Burberry</h2><p><b>Tour Bernabéu</b> 与 <b>Palacio Real interior</b> 仍是观光核心；<b>Las Rozas Village / Burberry</b> 现在也是当天主要计划。Debod 已从默认路线删除，不在10/7补回。</p></div></section>
+    <section class="section core-lock"><div class="core-lock__icon">🔒</div><div><span class="kicker">当天重点</span><h2>10/6：伯纳乌 + 马德里王宫 + Las Rozas Village / Burberry</h2><p><b>Tour Bernabéu</b> 与 <b>Palacio Real interior</b> 仍是观光核心；<b>Las Rozas Village / Burberry</b> 现在也是当天主要计划。Debod 已从默认路线删除，不在10/7补回。</p></div></section>
     <section class="section map-section">
-      <div class="section-title"><div><span class="kicker">EXECUTION MAP</span><h2>交互式执行地图</h2></div><button id="fitMapBtn" class="mini-btn">显示全部</button></div>
+      <div class="section-title"><div><span class="kicker">路线地图</span><h2>交互式执行地图</h2></div><button id="fitMapBtn" class="mini-btn">显示全部</button></div>
       <div class="map-help">点地图编号可查看日期、时间、任务和导航；编号按现场实际执行顺序。</div><div id="map" aria-label="马德里旅行执行地图"></div>
       <div class="map-legend"><span><i class="dot dot--1005"></i>10/5 抵达</span><span><i class="dot dot--1006"></i>10/6 核心日</span><span><i class="dot dot--1007"></i>10/7 离境日</span></div>
     </section>
-    <section class="section" id="timelineSection"><div class="section-title"><div><span class="kicker">TIMELINE</span><h2>逐日执行</h2></div><span class="section-note">点击一项 → 地图定位</span></div><div id="timeline"></div></section>
-    <section class="section"><div class="section-title"><div><span class="kicker">REAL VIEWS</span><h2>实景预览</h2></div><span class="section-note">真实网络图片</span></div><div class="photo-grid" id="photoGrid"></div></section>
+    <section class="section" id="timelineSection"><div class="section-title"><div><span class="kicker">时间安排</span><h2>逐日执行</h2></div><span class="section-note">点击一项 → 地图定位</span></div><div id="timeline"></div></section>
+    <section class="section"><div class="section-title"><div><span class="kicker">实景参考</span><h2>实景预览</h2></div><span class="section-note">真实网络图片</span></div><div class="photo-grid" id="photoGrid"></div></section>
     <section class="section compact-sections">
-      <details open><summary>🏨 Vértice Roomspace Madrid <span>Booked & paid</span></summary><div class="details-body"><p><b>已确认订单：</b>10/5–10/7，Standard Room，约24 m²，2 × 0.8 m single beds；两人10/6、10/7早餐都已包含。</p><p><b>价格：</b><b>CNY 2,126.72 已付</b>；non-refundable；订单未显示单独 Madrid city accommodation tax。</p><p><b>执行：</b>24h reception；工作日 breakfast buffet 约07:00–10:00；FoodSpace 24h；San Cristóbal Industrial 约200–300m。旧 ibis Madrid Getafe / Getafe Centro 不再使用。</p></div></details>
-
-      <details open><summary>🚆 Bernabéu / Cercanías / S10 <span>Transport</span></summary><div class="details-body"><p><b>10/6：</b>Vértice → 步行 San Cristóbal Industrial → C3/current direct → Nuevos Ministerios → <b>S10/current replacement service</b> → Bernabéu。不要套用旧 L10 直达路线。</p><p><b>时间：</b>目标09:25左右到 Bernabéu，给10:00 Tour留找入口和交通buffer。</p><p class="warning">C3/S10若明显异常，为保护已付/核心时间可以从最合适的位置改Uber；但 Las Rozas 往返默认仍坚持公共交通。</p></div></details>
-
-      <details><summary>⚽ Tour Bernabéu / Official Store <span>Core</span></summary><div class="details-body"><p><b>目标：</b>10:00–12:00 Tour Bernabéu；随后 Official Store 20–30分钟。</p><p>如果前段晚点，先把 Store 压到约15–20分钟，不压缩 Tour 本身。Cristiano Ronaldo merchandise 不预设一定有现货，现场看 legends / historical / customization。</p></div></details>
-
-      <details><summary>👑 Palacio Real de Madrid <span>Core</span></summary><div class="details-body"><p><b>新版目标：</b><b>14:00–15:15</b>，不是旧版14:30–16:00。13:45左右到入口缓冲，必须进入内部。</p><p>离开王宫后直接步行向 Plaza de España，再接 L3 去 Moncloa；不在中间重新塞 Debod 或其他付费景点。</p></div></details>
-
-      <details><summary>🛍️ Las Rozas Village / Burberry <span>Major plan item</span></summary><div class="details-body"><p><b>默认去程：</b>Palacio Real → 步行 Plaza de España → <b>L3 → Moncloa</b> → interurban bus <b>625 / 628 / 629</b> → Las Rozas Village。</p><p><b>Moncloa 工作基线：</b>629 platform 3、628 platform 4、625 platform 5；平台可能变化，出发前再核。不要死等某一路，确认到 Village 后坐最先合适班次。</p><p><b>购物：</b>约16:30/16:45到，<b>Burberry first</b>，主要购物到约19:45；19:45–20:20晚饭/最后购买。不要先逛完整个Village再回Burberry。</p><p><b>默认返程：</b>625/628/629 → Moncloa → L3 → Sol → C3 → San Cristóbal Industrial → Vértice。</p><p class="warning">Taxi/Uber只是交通崩溃、购物太多或极度疲劳时的救场，不是默认往返。C8/C10不是默认；Shopping Express当前也不是baseline。</p></div></details>
-
-      <details><summary>🧾 Burberry Tax Free / DIVA <span>10/6 → 10/7</span></summary><div class="details-body"><p>如果10/6在Burberry买符合条件的商品，结账时说：<b>“Tax free, please. I live in the UK.”</b></p><p>离店前确认拿到普通receipt/invoice、Tax Free / DIVA / DER document及refund-provider paperwork，并核对姓名、护照信息、金额和退款方式。</p><p><b>10/7：</b>护照、boarding pass、receipt、DIVA文件和相关商品要保持可取。如果商品计划进托运行李，尽可能在交运行李变得不可取之前完成需要的DIVA/Customs验证。</p><p class="warning">DIVA kiosk用于验证出口资格，并不等于机器直接把退款打给你；实际退款按商家/退款服务商文件执行。</p></div></details>
-
-      <details><summary>🧳 Golden Locker Plaza España <span>10/7 luggage</span></summary><div class="details-body"><p><b>策略不变：</b>10/7不把箱子留Vértice。退房后带箱 → San Cristóbal Industrial → C3 Sol → L3 Plaza de España → Golden Locker。</p><p><b>新版时间：</b>约09:55–10:10存；<b>18:25–18:40取</b>，比旧版19:00更早。地址仍为 Calle Fomento 37, Local 2。</p><p>若有Tax Free商品/文件需要机场展示，不要误锁在无法及时取出的箱子深处。</p></div></details>
-
-      <details><summary>✈ 10/7 MAD → Manchester <span>DIVA + Schengen exit</span></summary><div class="details-body"><p><b>23:15 Madrid → Manchester</b> 是硬锚点。新版约18:40–18:50叫车，约18:50从 Plaza de España 一带出发，目标 <b>19:30–19:45 到 MAD</b>。</p><p>如果有Tax Free商品：先找实际departure terminal对应的 DIVA / Customs；扫码验证，若要求人工检查则带商品和文件去Customs；之后再走bag-drop / security / passport-control / boarding。</p><p class="warning">13:00–17:15自由时间、咖啡、购物、晚饭都必须给18:25取行李和19:30–19:45机场目标让路。</p></div></details>
-
-      <details><summary>🍽 吃饭 <span>Food</span></summary><div class="details-body"><p><b>10/5：</b>深夜按需机场/Hotel FoodSpace 24h，不外出找餐厅。</p><p><b>10/6：</b>早餐酒店已含；12:30–13:05 Bernabéu附近正常午饭；晚饭在 <b>Las Rozas Village 19:45–20:20</b>，Burberry购买未结束时先完成购买。</p><p><b>10/7：</b>早餐已含；12:00–13:00 Mercado de San Miguel / nearby lunch；17:15–18:05提前晚饭，不把晚饭拖到机场链条后。</p></div></details>
-
-      <details><summary>💶 两人预算 <span>Budget</span></summary><div class="details-body"><div class="budget-row"><span>Vértice Roomspace · 已付</span><b>CNY 2,126.72</b></div><div class="budget-row"><span>两天酒店早餐</span><b>已包含</b></div><div class="budget-row"><span>外食</span><b>~€100–150</b></div><div class="budget-row"><span>Tour Bernabéu</span><b>临购前核官方价</b></div><div class="budget-row"><span>Palacio Real</span><b>临购前核官方价</b></div><div class="budget-row"><span>Golden Locker</span><b>~€11 工作值</b></div><div class="budget-row"><span>一般公共交通</span><b>~€20–35</b></div><div class="budget-row"><span>Las Rozas interurban bus</span><b>~€12 / 2人往返工作值</b></div><p class="muted">Burberry/其他购物及Tax Free退款不预先计入；10/5机场→酒店、10/7 locker→机场 road transfer 到当天看报价。</p></div></details>
-
-      <details class="danger-details" open><summary>⚠️ 晚点 / 故障怎么删 <span>Contingency</span></summary><div class="details-body"><ol class="priority-list"><li><b>10/5航班晚点：</b>仍直接MAD→Vértice→睡觉。</li><li><b>10/6 C3/S10异常：</b>必要时Uber救Bernabéu时间。</li><li><b>10/6景点晚：</b>保护 Bernabéu → Palacio Real → Las Rozas/Burberry；先压Store、午饭和非Burberry品牌。</li><li><b>Moncloa公交异常：</b>先同时查625/628/629，再看CRTM/Google Maps，再考虑Cercanías backup；只有公共交通实质崩溃才用单程Uber/taxi救场。</li><li><b>10/7 locker问题：</b>换另一中央自动locker，再考虑人工寄存；回Vértice仅最后手段。</li><li><b>10/7落后：</b>缩13:00–17:15自由块、缩晚饭、提前取locker；airport/DIVA buffer优先。</li></ol></div></details>
+      <details open><summary>🏨 住宿 <span>Vértice Roomspace Madrid</span></summary><div class="details-body"><p>10/5–10/7，Standard Room，约24 m²，2张约0.8 m单人床；10/6、10/7两天早餐都已包含。</p><p>已付 <b>人民币 2,126.72 元</b>。酒店前台24小时；San Cristóbal Industrial 火车站距离酒店约200–300 m。</p></div></details>
+      <details open><summary>🚆 10/6 去伯纳乌 <span>C3 + S10</span></summary><div class="details-body"><p>Vértice → 步行到 <b>San Cristóbal Industrial</b> → Cercanías C3 → <b>Nuevos Ministerios</b> → S10 替代公交 → <b>Santiago Bernabéu 伯纳乌球场</b>。</p><p>目标约09:25到球场，10:00开始参观。铁路或替代公交明显异常时，直接从方便的位置改 Uber。</p></div></details>
+      <details><summary>⚽ 伯纳乌球场 <span>Tour Bernabéu + 官方商店</span></summary><div class="details-body"><p><b>10:00–12:00 Tour Bernabéu 伯纳乌参观。</b> 结束后去官方商店 Official Store 约20–30分钟。</p><p>如果上午时间紧，先缩短商店，不压缩球场参观。</p></div></details>
+      <details><summary>👑 马德里王宫 <span>Palacio Real de Madrid</span></summary><div class="details-body"><p><b>14:00–15:15 入内参观。</b> 13:45左右到入口。</p><p>结束后步行到西班牙广场 Plaza de España，再坐地铁 L3 去 Moncloa。</p></div></details>
+      <details><summary>🛍️ 拉斯罗萨斯购物村 <span>Las Rozas Village · Burberry</span></summary><div class="details-body"><p><b>去程：</b>Plaza de España → 地铁 L3 → Moncloa → 625 / 628 / 629 公交 → Las Rozas Village。</p><p><b>到达后先去 Burberry。</b> 预计约16:30/16:45到，主要购物到约19:45；之后在购物村简单吃晚饭，再坐公交返回 Moncloa。</p><p>Moncloa 站台参考：629约在3号、628约在4号、625约在5号；当天看 CRTM / Google Maps，以最先合适的一班为准。</p></div></details>
+      <details><summary>🧾 购物退税 <span>Tax Free / DIVA</span></summary><div class="details-body"><p>如果在 Burberry 购买符合退税条件的商品，结账时说明：<b>“Tax free, please. I live in the UK.”</b></p><p>离店前检查收据/发票、DIVA/DER退税文件和退款服务商文件，姓名、护照信息、金额都要正确。</p><p><b>10/7去机场：</b>护照、登机牌、退税文件和相关商品要放在容易拿到的位置；需要海关查看的商品不要提前放进已经交运的行李里。</p></div></details>
+      <details><summary>🧳 10/7 行李 <span>Golden Locker 西班牙广场</span></summary><div class="details-body"><p>早上退房后带箱进市中心：San Cristóbal Industrial → C3 → Sol → L3 → Plaza de España。</p><p>约09:55–10:10存入 <b>Golden Locker，Calle Fomento 37, Local 2</b>；18:25–18:40回来取。全天不需要返回酒店。</p></div></details>
+      <details><summary>✈ 10/7 飞曼彻斯特 <span>机场 + DIVA</span></summary><div class="details-body"><p><b>23:15 Madrid → Manchester。</b> 18:25–18:40取行李，约18:50从市中心出发，目标19:30–19:45到 Madrid-Barajas Airport。</p><p>如有退税，先按当天航站楼指示完成 DIVA / 海关验证，然后办理托运行李、安检和出境手续。</p></div></details>
+      <details><summary>🍽 吃饭 <span>不排长队</span></summary><div class="details-body"><p><b>10/6：</b>酒店早餐；伯纳乌后12:30左右午饭；19:45后在 Las Rozas Village 简单晚饭。</p><p><b>10/7：</b>酒店早餐；12:00左右 Mercado de San Miguel 圣米格尔市场 / 附近午饭；17:15–18:05提前晚饭。</p></div></details>
+      <details><summary>💶 费用参考 <span>两人</span></summary><div class="details-body"><div class="budget-row"><span>住宿已付</span><b>人民币 2,126.72 元</b></div><div class="budget-row"><span>吃饭</span><b>约 €100–150</b></div><div class="budget-row"><span>公共交通</span><b>约 €20–35</b></div><div class="budget-row"><span>Las Rozas 往返公交</span><b>约 €12 / 两人</b></div><div class="budget-row"><span>Golden Locker</span><b>约 €11</b></div></div></details>
+      <details class="danger-details" open><summary>⚠️ 时间不够时怎么处理 <span>删减顺序</span></summary><div class="details-body"><ol class="priority-list"><li><b>10/6早上交通异常：</b>必要时直接 Uber，优先保证10:00伯纳乌。</li><li><b>10/6进度变慢：</b>先缩短伯纳乌商店和午饭，再缩短 Las Rozas 的其他品牌；伯纳乌、王宫和 Burberry 优先。</li><li><b>10/7下午：</b>13:00–17:15本来就是自由时间，时间紧就直接缩短。</li><li><b>10/7离境：</b>18:25左右开始取行李后，不再增加活动；机场和退税时间优先。</li></ol></div></details>
     </section>
-    <section class="section source-note"><h2>现场原则</h2><p><b>不重新加入 Debod</b>，也不把它塞进10/7；Prado + Retiro继续关闭。10/6 Las Rozas默认公共交通，不改成往返打车，也不把C8/C10设为默认。</p><p>10/7继续 central locker，不回Vértice取行李；机场目标已经提前到19:30–19:45，并为可能的Spanish Tax Free / DIVA留出额外缓冲。</p></section>
-    <section class="section coming-soon"><span class="kicker">CITY SWITCH</span><h2>葡西之旅 2026</h2><div class="city-strip"><a href="./index.html">总览</a><a href="./madeira.html">Madeira ✓</a><a href="./lisbon.html">Lisbon ✓</a><a href="./porto.html">Porto ✓</a><span class="is-current">Madrid ✓</span></div></section>
+    <section class="section source-note"><h2>现场提醒</h2><p><b>10/6：</b>伯纳乌球场 → 马德里王宫 → Las Rozas Village / Burberry，三段按顺序执行。</p><p><b>10/7：</b>早上把行李放到 Golden Locker，白天逛马德里老城；18:25左右取行李，约18:50去机场。</p></section>
+    <section class="section coming-soon"><span class="kicker">城市切换</span><h2>猫狗之旅 2026</h2><div class="city-strip"><a href="./index.html">总览</a><a href="./madeira.html">Madeira ✓</a><a href="./lisbon.html">Lisbon ✓</a><a href="./porto.html">Porto ✓</a><span class="is-current">Madrid ✓</span></div></section>
   </main>
-  <footer>Portugal / Spain Trip 2026 · Madrid 手机现场执行版</footer>
+  <footer>猫狗之旅 2026 · Madrid 手机现场执行版</footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script><script src="./madrid.js"></script>
 </body></html>
