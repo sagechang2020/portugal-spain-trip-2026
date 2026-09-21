@@ -44,7 +44,7 @@ const schedules={
 {iso:'2026-10-03T16:25:00+01:00',time:'16:25',title:'发现者纪念碑 Padrão dos Descobrimentos',sub:'外观到16:50；时间紧可取消',place:'padrao',icon:'🧭',buffer:true},
 {iso:'2026-10-03T16:50:00+01:00',time:'16:50',title:'Belém 河岸步行',sub:'约25分钟；可压缩',place:'belem',icon:'🚶',buffer:true},
 {iso:'2026-10-03T17:15:00+01:00',time:'17:15',title:'贝伦塔 Torre de Belém',sub:'外观到17:40；时间紧可取消',place:'belem',icon:'🗼',buffer:true},
-{iso:'2026-10-03T17:40:00+01:00',time:'After ~17:40',title:'Belém → ibis 酒店',sub:'CP + Metro；太累就Uber。晚上只吃饭/休息，不加硬项目',place:'ibis',icon:'🚆'}]},
+{iso:'2026-10-03T17:40:00+01:00',time:'约17:40后',title:'Belém → ibis 酒店',sub:'火车 + 地铁；太累就 Uber。晚上吃饭后休息',place:'ibis',icon:'🚆'}]},
 '1004':{label:'10/4 周日',subtitle:'市中心顺路游览 + 14:00 AP133',items:[
 {iso:'2026-10-04T07:45:00+01:00',time:'07:45',title:'起床',sub:'10/3晚上已故意留空',place:'ibis',icon:'🌤️'},
 {iso:'2026-10-04T08:00:00+01:00',time:'08:00',title:'ibis 自助早餐',sub:'08:00–08:40 · 已包含',place:'ibis',icon:'☕',core:true},
@@ -61,8 +61,8 @@ const schedules={
 {iso:'2026-10-04T11:40:00+01:00',time:'11:40',title:'Baixa-Chiado → Praça de Espanha',sub:'蓝线直达；开始去车站',place:'ibis',icon:'🚇',core:true},
 {iso:'2026-10-04T12:00:00+01:00',time:'12:00',title:'回 ibis 酒店取行李',sub:'12:15前完成',place:'ibis',icon:'🧳',core:true},
 {iso:'2026-10-04T12:20:00+01:00',time:'~12:20',title:'Praça de Espanha → Santa Apolónia',sub:'蓝线直达；地铁异常时改 Uber/Bolt',place:'santa',icon:'🚇',core:true},
-{iso:'2026-10-04T12:45:00+01:00',time:'~12:45',title:'抵达 Lisboa Santa Apolónia',sub:'厕所 / 水 / 看站台；保留充足buffer',place:'santa',icon:'🚉',core:true},
-{iso:'2026-10-04T13:20:00+01:00',time:'From ~13:20',title:'准备上车',sub:'不要再离开车站',place:'santa',icon:'🎫'},
+{iso:'2026-10-04T12:45:00+01:00',time:'~12:45',title:'抵达 Lisboa Santa Apolónia',sub:'洗手间 / 买水 / 看站台；预留充足时间',place:'santa',icon:'🚉',core:true},
+{iso:'2026-10-04T13:20:00+01:00',time:'约13:20起',title:'准备上车',sub:'不要再离开车站',place:'santa',icon:'🎫'},
 {iso:'2026-10-04T14:00:00+01:00',time:'14:00',title:'AP133 → 波尔图 Porto Campanhã',sub:'16:48到达 · 固定车次',place:'santa',icon:'🚄',core:true}]}}
 ;
 
