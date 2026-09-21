@@ -25,13 +25,13 @@ const schedules={
 {time:'22:00',title:'O Regional 晚餐',sub:'Xarambinha 备用；预计等待>15分钟就换',place:'oregional',icon:'🍽️',core:true},
 {time:'饭后',title:'短走老城 → 酒店',sub:'航班晚点就删除散步',place:'oldtown',icon:'🌙'}]},
 '1001':{label:'10/1 周四',subtitle:'蒙特皇宫 + CR7泳池 + 西海岸 + 19:30晚餐',items:[
-{time:'08:30',title:'起床 / 洗漱',sub:'不再早起赶行程',place:'hotel-madeira',icon:'🌤️'},
+{time:'08:30',title:'起床 / 洗漱',sub:'轻松开始',place:'hotel-madeira',icon:'🌤️'},
 {time:'08:45',title:'Hotel Madeira 早餐',sub:'08:45–09:30 · 已包含',place:'hotel-madeira',icon:'☕'},
 {time:'09:30',title:'最终检查 → 退房 + 寄存行李',sub:'约09:30–09:50；空手游览',place:'hotel-madeira',icon:'🧳'},
 {time:'09:50',title:'步行 → 缆车下站',sub:'约20分钟',place:'cable',icon:'🚶'},
 {time:'~10:10',title:'丰沙尔缆车 Teleférico do Funchal',sub:'约10:10–10:30',place:'cable',icon:'🚠',core:true},
 {time:'~10:40',title:'蒙特皇宫热带花园 Monte Palace Madeira',sub:'约10:40–12:40 · 保护完整约2小时',place:'monte',icon:'🌿',core:true},
-{time:'~12:40',title:'开始叫 Uber → central Funchal',sub:'下山后直接回丰沙尔市中心',place:'monte',icon:'📱'},
+{time:'~12:40',title:'开始叫 Uber → 丰沙尔市中心',sub:'下山后直接回丰沙尔市中心',place:'monte',icon:'📱'},
 {time:'13:10',title:'正常午饭',sub:'13:10–14:05；市中心方便餐厅，不排长队',icon:'🍽️'},
 {time:'14:05',title:'回 Hotel Madeira 取行李',sub:'14:15前完成',place:'hotel-madeira',icon:'🧳'},
 {time:'14:15',title:'Hotel Madeira → Pestana CR7',sub:'带行李用短程 Uber',place:'cr7',icon:'🚕'},
@@ -64,8 +64,8 @@ const schedules={
 {time:'18:05',title:'回前台取行李 / 洗手间 / 最后检查',sub:'18:05–18:25',place:'cr7',icon:'🧳'},
 {time:'18:25',title:'最后缓冲',sub:'吸收晚饭服务稍慢；不要新增活动',place:'cr7',icon:'⏳',buffer:true},
 {time:'~18:45',title:'开始叫 Uber / taxi → FNC',sub:'Uber等待过久就改出租车；最迟约19:00离开',place:'airport',icon:'📱',core:true},
-{time:'~19:25',title:'抵达 FNC Airport',sub:'目标19:25–19:40到；留舒适buffer',place:'airport',icon:'🛂',core:true},
-{time:'21:20',title:'easyJet U27628 起飞',sub:'FNC → LIS 23:00 · 替代航班硬锚点',place:'airport',icon:'✈️',core:true},
+{time:'~19:25',title:'抵达 FNC Airport',sub:'目标19:25–19:40到；预留充足时间',place:'airport',icon:'🛂',core:true},
+{time:'21:20',title:'easyJet U27628 起飞',sub:'FNC → LIS 23:00 · 当晚固定航班',place:'airport',icon:'✈️',core:true},
 {time:'23:00',title:'抵达里斯本 Lisbon',sub:'下一步只去 ibis Lisboa José Malhoa，不夜游',icon:'🌙'}]}}
 ;
 
