@@ -1,69 +1,69 @@
 const TRIP_YEAR=2026;
 const places=[
 {id:'lis-airport',n:'①',day:'1002',lat:38.7742,lng:-9.1342,name:'里斯本机场',local:'Humberto Delgado Airport · Lisbon Airport',time:'10/2周五 23:00',task:'U27628 抵达里斯本',icon:'✈️'},
-{id:'ibis',n:'②',day:'1002',lat:38.737046,lng:-9.163156,name:'宜必思里斯本若泽马尔霍亚',local:'ibis Lisboa José Malhoa',time:'10/2深夜入住；10/4约08:50退房寄存、12:00左右取行李',task:'两晚住宿 · Praça de Espanha North Hall',icon:'🏨'},
-{id:'castle',n:'③',day:'1003',lat:38.7139,lng:-9.1335,name:'圣乔治城堡',local:'Castelo de São Jorge',time:'10/3 10:00–11:30',task:'核心 · 进入内部',icon:'🏰'},
-{id:'portas',n:'④',day:'1003',lat:38.7118,lng:-9.1303,name:'太阳门观景台',local:'Miradouro das Portas do Sol',time:'10/3约11:35–11:50',task:'短停 · 连续下坡线',icon:'🌇'},
+{id:'ibis',n:'②',day:'1002',lat:38.737046,lng:-9.163156,name:'宜必思里斯本若泽马尔霍亚',local:'ibis Lisboa José Malhoa',time:'10/2深夜入住；10/4约08:50退房寄存、12:00左右取行李',task:'两晚住宿 · Praça de Espanha 北厅',icon:'🏨'},
+{id:'castle',n:'③',day:'1003',lat:38.7139,lng:-9.1335,name:'圣乔治城堡',local:'Castelo de São Jorge',time:'10/3 10:00–11:30',task:'重点景点 · 入内参观',icon:'🏰'},
+{id:'portas',n:'④',day:'1003',lat:38.7118,lng:-9.1303,name:'太阳门观景台',local:'Miradouro das Portas do Sol',time:'10/3约11:35–11:50',task:'短停 · 顺路下坡',icon:'🌇'},
 {id:'luzia',n:'⑤',day:'1003',lat:38.7116,lng:-9.1307,name:'圣卢西亚观景台',local:'Miradouro de Santa Luzia',time:'10/3约11:50–12:10',task:'拍照停留',icon:'📷'},
 {id:'se',n:'⑥',day:'1003',lat:38.7098,lng:-9.1335,name:'里斯本主教座堂',local:'Sé de Lisboa',time:'10/3约12:10–12:30',task:'短停 / 外观区域为主',icon:'⛪'},
-{id:'cais',n:'⑦',day:'1003',lat:38.7061,lng:-9.1443,name:'Cais do Sodré 火车站',local:'Cais do Sodré railway station',time:'10/3约14:00',task:'CP Cascais Line → Belém',icon:'🚆'},
-{id:'jeronimos',n:'⑧',day:'1003',lat:38.6979,lng:-9.2066,name:'热罗尼莫斯修道院',local:'Mosteiro dos Jerónimos',time:'10/3约14:30–15:50',task:'核心 · 付费进入',icon:'⛪'},
-{id:'pasteis',n:'⑨',day:'1003',lat:38.6975,lng:-9.2032,name:'贝伦蛋挞',local:'Pastéis de Belém',time:'10/3约15:55–16:20',task:'长队则 takeaway / 缩短',icon:'🥧'},
-{id:'padrao',n:'⑩',day:'1003',lat:38.6939,lng:-9.2058,name:'发现者纪念碑',local:'Padrão dos Descobrimentos',time:'10/3约16:25–16:50',task:'外观；延误时优先删',icon:'🧭'},
-{id:'belem',n:'⑪',day:'1003',lat:38.6916,lng:-9.2160,name:'贝伦塔',local:'Torre de Belém',time:'10/3约17:15–17:40',task:'只看外观；延误时可删',icon:'🗼'},
-{id:'comercio',n:'⑫',day:'1004',lat:38.7076,lng:-9.1365,name:'商业广场',local:'Praça do Comércio',time:'10/4约09:25–09:40',task:'soft item · 顺路恢复',icon:'🏛️'},
-{id:'augusta',n:'⑬',day:'1004',lat:38.7105,lng:-9.1372,name:'奥古斯塔街',local:'Rua Augusta',time:'10/4约09:40–10:00',task:'顺路向北到Rossio；可压缩',icon:'🚶'},
-{id:'rossio',n:'⑭',day:'1004',lat:38.7139,lng:-9.1394,name:'罗西欧广场',local:'Rossio / Praça Dom Pedro IV',time:'10/4约10:00–10:15',task:'10/4自然主线',icon:'📍'},
+{id:'cais',n:'⑦',day:'1003',lat:38.7061,lng:-9.1443,name:'Cais do Sodré 火车站',local:'Cais do Sodré railway station',time:'10/3约14:00',task:'CP Cascais线 → Belém',icon:'🚆'},
+{id:'jeronimos',n:'⑧',day:'1003',lat:38.6979,lng:-9.2066,name:'热罗尼莫斯修道院',local:'Mosteiro dos Jerónimos',time:'10/3约14:30–15:50',task:'重点景点 · 入内参观',icon:'⛪'},
+{id:'pasteis',n:'⑨',day:'1003',lat:38.6975,lng:-9.2032,name:'贝伦蛋挞',local:'Pastéis de Belém',time:'10/3约15:55–16:20',task:'排队长就外带或缩短停留',icon:'🥧'},
+{id:'padrao',n:'⑩',day:'1003',lat:38.6939,lng:-9.2058,name:'发现者纪念碑',local:'Padrão dos Descobrimentos',time:'10/3约16:25–16:50',task:'只看外观；时间紧可取消',icon:'🧭'},
+{id:'belem',n:'⑪',day:'1003',lat:38.6916,lng:-9.2160,name:'贝伦塔',local:'Torre de Belém',time:'10/3约17:15–17:40',task:'只看外观；时间紧可取消',icon:'🗼'},
+{id:'comercio',n:'⑫',day:'1004',lat:38.7076,lng:-9.1365,name:'商业广场',local:'Praça do Comércio',time:'10/4约09:25–09:40',task:'顺路短停；时间紧可取消',icon:'🏛️'},
+{id:'augusta',n:'⑬',day:'1004',lat:38.7105,lng:-9.1372,name:'奥古斯塔街',local:'Rua Augusta',time:'10/4约09:40–10:00',task:'顺路向北走到 Rossio',icon:'🚶'},
+{id:'rossio',n:'⑭',day:'1004',lat:38.7139,lng:-9.1394,name:'罗西欧广场',local:'Rossio / Praça Dom Pedro IV',time:'10/4约10:00–10:15',task:'10/4 顺路经过',icon:'📍'},
 {id:'carmo',n:'⑮',day:'1004',lat:38.7122,lng:-9.1407,name:'卡尔莫广场 / 修道院外观',local:'Largo do Carmo / Convento do Carmo',time:'10/4约10:30–10:45',task:'外观即可',icon:'🏚️'},
-{id:'chiado',n:'⑯',day:'1004',lat:38.7108,lng:-9.1422,name:'希亚多',local:'Chiado / Rua Garrett / Camões',time:'10/4约10:45–11:40',task:'街区慢走 + early light lunch',icon:'☕'},
+{id:'chiado',n:'⑯',day:'1004',lat:38.7108,lng:-9.1422,name:'希亚多',local:'Chiado / Rua Garrett / Camões',time:'10/4约10:45–11:40',task:'街区慢走 + 简短午饭',icon:'☕'},
 {id:'santa',n:'⑰',day:'1004',lat:38.7141,lng:-9.1220,name:'圣阿波隆尼亚站',local:'Lisboa Santa Apolónia',time:'10/4约12:45抵达；14:00发车',task:'AP133 → Porto Campanhã',icon:'🚄'}
 ];
 
 const schedules={
-'1002':{label:'10/2 周五',subtitle:'23:00抵达 Lisbon · 酒店 + 睡觉 only',items:[
-{iso:'2026-10-02T21:20:00+01:00',time:'21:20',title:'Funchal FNC 起飞',sub:'easyJet U27628 → LIS 23:00',icon:'✈️',core:true},
-{iso:'2026-10-02T23:00:00+01:00',time:'23:00',title:'里斯本机场 Lisbon Airport',sub:'替代航班抵达；取行李后不安排任何Lisbon景点',place:'lis-airport',icon:'🧳',core:true},
-{iso:'2026-10-02T23:40:00+01:00',time:'~23:30–23:45',title:'离开 arrivals',sub:'按实际下机和行李速度执行',place:'lis-airport',icon:'🚶'},
-{iso:'2026-10-02T23:50:00+01:00',time:'~23:45–00:10',title:'Airport → ibis Lisboa José Malhoa',sub:'Uber / official taxi 直达；深夜+行李不强迫Metro换乘',place:'ibis',icon:'🚕',core:true},
-{time:'~00:10–00:25',title:'ibis check-in / 洗漱 / 睡觉',sub:'不安排第二顿晚餐；晚饭已在Funchal解决',place:'ibis',icon:'🏨',core:true}]},
-'1003':{label:'10/3 周六',subtitle:'Castelo + Alfama下坡 + Belém · 晚上留空',items:[
+'1002':{label:'10/2 周五',subtitle:'23:00抵达里斯本 · 入住后直接休息',items:[
+{iso:'2026-10-02T21:20:00+01:00',time:'21:20',title:'丰沙尔 FNC 起飞',sub:'easyJet U27628 → LIS 23:00',icon:'✈️',core:true},
+{iso:'2026-10-02T23:00:00+01:00',time:'23:00',title:'里斯本机场 Lisbon Airport',sub:'取行李后直接去酒店',place:'lis-airport',icon:'🧳',core:true},
+{iso:'2026-10-02T23:40:00+01:00',time:'~23:30–23:45',title:'离开到达大厅',sub:'按实际下机和行李速度执行',place:'lis-airport',icon:'🚶'},
+{iso:'2026-10-02T23:50:00+01:00',time:'~23:45–00:10',title:'里斯本机场 → ibis Lisboa José Malhoa',sub:'Uber / 正规出租车直达酒店',place:'ibis',icon:'🚕',core:true},
+{time:'~00:10–00:25',title:'ibis 办理入住 / 洗漱 / 睡觉',sub:'如饿了只简单吃点东西，尽快休息',place:'ibis',icon:'🏨',core:true}]},
+'1003':{label:'10/3 周六',subtitle:'圣乔治城堡 + Alfama老城 + Belém · 晚上休息',items:[
 {iso:'2026-10-03T08:20:00+01:00',time:'~08:20',title:'起床 / 洗漱',sub:'给深夜抵达后的正常恢复时间',place:'ibis',icon:'🌤️'},
-{iso:'2026-10-03T08:40:00+01:00',time:'08:40',title:'ibis 早餐 buffet',sub:'08:40–09:20 · 已包含',place:'ibis',icon:'☕',core:true},
+{iso:'2026-10-03T08:40:00+01:00',time:'08:40',title:'ibis 自助早餐',sub:'08:40–09:20 · 已包含',place:'ibis',icon:'☕',core:true},
 {iso:'2026-10-03T09:20:00+01:00',time:'09:20',title:'最终准备 / 叫车',sub:'约09:35出发',place:'ibis',icon:'🎒'},
 {iso:'2026-10-03T09:35:00+01:00',time:'~09:35',title:'ibis → Castelo',sub:'Uber/Bolt，直接上坡保存体力',place:'castle',icon:'🚕'},
-{iso:'2026-10-03T10:00:00+01:00',time:'10:00',title:'Castelo de São Jorge',sub:'10:00–11:30 · CORE · paid interior',place:'castle',icon:'🏰',core:true},
-{iso:'2026-10-03T11:35:00+01:00',time:'11:35',title:'Miradouro das Portas do Sol',sub:'11:35–11:50 · short scenic stop',place:'portas',icon:'🌇'},
-{iso:'2026-10-03T11:50:00+01:00',time:'11:50',title:'Miradouro de Santa Luzia',sub:'到12:10 · photo stop',place:'luzia',icon:'📷'},
-{iso:'2026-10-03T12:10:00+01:00',time:'12:10',title:'Sé de Lisboa area',sub:'到12:30 · 短停/外观区域为主',place:'se',icon:'⛪'},
+{iso:'2026-10-03T10:00:00+01:00',time:'10:00',title:'圣乔治城堡 Castelo de São Jorge',sub:'10:00–11:30 · 重点 · 入内参观',place:'castle',icon:'🏰',core:true},
+{iso:'2026-10-03T11:35:00+01:00',time:'11:35',title:'太阳门观景台 Miradouro das Portas do Sol',sub:'11:35–11:50 · 短暂停留',place:'portas',icon:'🌇'},
+{iso:'2026-10-03T11:50:00+01:00',time:'11:50',title:'圣卢西亚观景台 Miradouro de Santa Luzia',sub:'到12:10 · 拍照停留',place:'luzia',icon:'📷'},
+{iso:'2026-10-03T12:10:00+01:00',time:'12:10',title:'里斯本主教座堂 Sé de Lisboa',sub:'到12:30 · 短停/外观区域为主',place:'se',icon:'⛪'},
 {iso:'2026-10-03T12:30:00+01:00',time:'12:30',title:'继续下坡 → Baixa / Rossio',sub:'到12:50；不折返',place:'rossio',icon:'🚶'},
-{iso:'2026-10-03T12:50:00+01:00',time:'12:50',title:'正常午饭',sub:'12:50–13:35；Baixa/Rossio灵活选，排队>15–20分钟就换',place:'rossio',icon:'🍽️'},
+{iso:'2026-10-03T12:50:00+01:00',time:'12:50',title:'午饭',sub:'12:50–13:35；Baixa/Rossio灵活选，排队>15–20分钟就换',place:'rossio',icon:'🍽️'},
 {iso:'2026-10-03T13:35:00+01:00',time:'13:35',title:'Baixa / Rossio → Cais do Sodré',sub:'方便连接即可',place:'cais',icon:'🚇'},
 {iso:'2026-10-03T14:00:00+01:00',time:'~14:00',title:'Cais do Sodré → Belém',sub:'CP Cascais Line；周末班次临近再看',place:'cais',icon:'🚆'},
-{iso:'2026-10-03T14:30:00+01:00',time:'14:30',title:'Mosteiro dos Jerónimos',sub:'14:30–15:50 · CORE · paid interior',place:'jeronimos',icon:'⛪',core:true},
-{iso:'2026-10-03T15:55:00+01:00',time:'15:55',title:'Pastéis de Belém',sub:'到16:20；长队 takeaway / 缩短',place:'pasteis',icon:'🥧'},
-{iso:'2026-10-03T16:25:00+01:00',time:'16:25',title:'Padrão dos Descobrimentos',sub:'外观到16:50；延误时先删',place:'padrao',icon:'🧭',buffer:true},
+{iso:'2026-10-03T14:30:00+01:00',time:'14:30',title:'热罗尼莫斯修道院 Mosteiro dos Jerónimos',sub:'14:30–15:50 · 重点 · 入内参观',place:'jeronimos',icon:'⛪',core:true},
+{iso:'2026-10-03T15:55:00+01:00',time:'15:55',title:'贝伦蛋挞 Pastéis de Belém',sub:'到16:20；排队长就外带或缩短停留',place:'pasteis',icon:'🥧'},
+{iso:'2026-10-03T16:25:00+01:00',time:'16:25',title:'发现者纪念碑 Padrão dos Descobrimentos',sub:'外观到16:50；时间紧可取消',place:'padrao',icon:'🧭',buffer:true},
 {iso:'2026-10-03T16:50:00+01:00',time:'16:50',title:'Belém 河岸步行',sub:'约25分钟；可压缩',place:'belem',icon:'🚶',buffer:true},
-{iso:'2026-10-03T17:15:00+01:00',time:'17:15',title:'Torre de Belém',sub:'外观到17:40；延误时可删',place:'belem',icon:'🗼',buffer:true},
-{iso:'2026-10-03T17:40:00+01:00',time:'After ~17:40',title:'Belém → ibis',sub:'CP + Metro；太累就Uber。晚上只吃饭/休息，不加硬项目',place:'ibis',icon:'🚆'}]},
-'1004':{label:'10/4 周日',subtitle:'Baixa单向收尾 + 14:00 AP133',items:[
+{iso:'2026-10-03T17:15:00+01:00',time:'17:15',title:'贝伦塔 Torre de Belém',sub:'外观到17:40；时间紧可取消',place:'belem',icon:'🗼',buffer:true},
+{iso:'2026-10-03T17:40:00+01:00',time:'After ~17:40',title:'Belém → ibis 酒店',sub:'CP + Metro；太累就Uber。晚上只吃饭/休息，不加硬项目',place:'ibis',icon:'🚆'}]},
+'1004':{label:'10/4 周日',subtitle:'市中心顺路游览 + 14:00 AP133',items:[
 {iso:'2026-10-04T07:45:00+01:00',time:'07:45',title:'起床',sub:'10/3晚上已故意留空',place:'ibis',icon:'🌤️'},
-{iso:'2026-10-04T08:00:00+01:00',time:'08:00',title:'ibis 早餐 buffet',sub:'08:00–08:40 · 已包含',place:'ibis',icon:'☕',core:true},
-{iso:'2026-10-04T08:40:00+01:00',time:'08:40',title:'Check-out + 寄存行李',sub:'到08:55；贵重物随身',place:'ibis',icon:'🧳',core:true},
+{iso:'2026-10-04T08:00:00+01:00',time:'08:00',title:'ibis 自助早餐',sub:'08:00–08:40 · 已包含',place:'ibis',icon:'☕',core:true},
+{iso:'2026-10-04T08:40:00+01:00',time:'08:40',title:'退房 + 寄存行李',sub:'到08:55；贵重物随身',place:'ibis',icon:'🧳',core:true},
 {iso:'2026-10-04T09:00:00+01:00',time:'~09:00',title:'步行 → Praça de Espanha North Hall',sub:'South Hall施工期不依赖',place:'ibis',icon:'🚶'},
 {iso:'2026-10-04T09:05:00+01:00',time:'~09:05',title:'Praça de Espanha → Terreiro do Paço',sub:'Blue Line direct',place:'comercio',icon:'🚇'},
-{iso:'2026-10-04T09:25:00+01:00',time:'09:25',title:'Praça do Comércio',sub:'09:25–09:40 · soft item，落后可缩短/删',place:'comercio',icon:'🏛️',buffer:true},
-{iso:'2026-10-04T09:40:00+01:00',time:'09:40',title:'Rua Augusta',sub:'09:40–10:00；自然向北走到Rossio，soft item',place:'augusta',icon:'🚶',buffer:true},
-{iso:'2026-10-04T10:00:00+01:00',time:'10:00',title:'Rossio / Praça Dom Pedro IV',sub:'到10:15',place:'rossio',icon:'📍'},
+{iso:'2026-10-04T09:25:00+01:00',time:'09:25',title:'商业广场 Praça do Comércio',sub:'09:25–09:40 · 时间紧可缩短',place:'comercio',icon:'🏛️',buffer:true},
+{iso:'2026-10-04T09:40:00+01:00',time:'09:40',title:'奥古斯塔街 Rua Augusta',sub:'09:40–10:00；一路向北走到 Rossio',place:'augusta',icon:'🚶',buffer:true},
+{iso:'2026-10-04T10:00:00+01:00',time:'10:00',title:'罗西欧广场 Rossio / Praça Dom Pedro IV',sub:'到10:15',place:'rossio',icon:'📍'},
 {iso:'2026-10-04T10:15:00+01:00',time:'10:15',title:'Rossio → Largo do Carmo',sub:'有一些上坡',place:'carmo',icon:'🚶'},
-{iso:'2026-10-04T10:30:00+01:00',time:'10:30',title:'Convento do Carmo 外观',sub:'10:30–10:45；不进入',place:'carmo',icon:'🏚️'},
-{iso:'2026-10-04T10:45:00+01:00',time:'10:45',title:'Chiado / Rua Garrett / Camões',sub:'到11:10 · 慢走',place:'chiado',icon:'☕'},
-{iso:'2026-10-04T11:10:00+01:00',time:'11:10',title:'Early light lunch',sub:'11:10–11:40；sandwich / café / simple hot food，不吃慢正式餐',place:'chiado',icon:'🥪'},
-{iso:'2026-10-04T11:40:00+01:00',time:'11:40',title:'Baixa-Chiado → Praça de Espanha',sub:'Blue Line direct；进入离城链条',place:'ibis',icon:'🚇',core:true},
-{iso:'2026-10-04T12:00:00+01:00',time:'12:00',title:'回 ibis 取行李',sub:'12:15前完成',place:'ibis',icon:'🧳',core:true},
-{iso:'2026-10-04T12:20:00+01:00',time:'~12:20',title:'Praça de Espanha → Santa Apolónia',sub:'Blue Line direct；Metro异常才切Uber/Bolt',place:'santa',icon:'🚇',core:true},
+{iso:'2026-10-04T10:30:00+01:00',time:'10:30',title:'卡尔莫修道院 Convento do Carmo（外观）',sub:'10:30–10:45；不进入',place:'carmo',icon:'🏚️'},
+{iso:'2026-10-04T10:45:00+01:00',time:'10:45',title:'希亚多 Chiado / Rua Garrett / Camões',sub:'到11:10 · 慢走',place:'chiado',icon:'☕'},
+{iso:'2026-10-04T11:10:00+01:00',time:'11:10',title:'简短午饭',sub:'11:10–11:40；三明治、咖啡或简单热食',place:'chiado',icon:'🥪'},
+{iso:'2026-10-04T11:40:00+01:00',time:'11:40',title:'Baixa-Chiado → Praça de Espanha',sub:'蓝线直达；开始去车站',place:'ibis',icon:'🚇',core:true},
+{iso:'2026-10-04T12:00:00+01:00',time:'12:00',title:'回 ibis 酒店取行李',sub:'12:15前完成',place:'ibis',icon:'🧳',core:true},
+{iso:'2026-10-04T12:20:00+01:00',time:'~12:20',title:'Praça de Espanha → Santa Apolónia',sub:'蓝线直达；地铁异常时改 Uber/Bolt',place:'santa',icon:'🚇',core:true},
 {iso:'2026-10-04T12:45:00+01:00',time:'~12:45',title:'抵达 Lisboa Santa Apolónia',sub:'厕所 / 水 / 看站台；保留充足buffer',place:'santa',icon:'🚉',core:true},
 {iso:'2026-10-04T13:20:00+01:00',time:'From ~13:20',title:'准备上车',sub:'不要再离开车站',place:'santa',icon:'🎫'},
-{iso:'2026-10-04T14:00:00+01:00',time:'14:00',title:'AP133 → Porto Campanhã',sub:'16:48到达 · HARD ANCHOR',place:'santa',icon:'🚄',core:true}]}}
+{iso:'2026-10-04T14:00:00+01:00',time:'14:00',title:'AP133 → 波尔图 Porto Campanhã',sub:'16:48到达 · 固定车次',place:'santa',icon:'🚄',core:true}]}}
 ;
 
 const photos=[
@@ -100,6 +100,6 @@ function focusPlace(id){const p=places.find(x=>x.id===id);if(!p)return;map.setVi
 function fitDay(day){if(day==='today'){map.fitBounds(allBounds.pad(.06));return}const ps=places.filter(p=>p.day===day||(day==='1004'&&['ibis','rossio'].includes(p.id)));if(ps.length)map.fitBounds(L.latLngBounds(ps.map(p=>[p.lat,p.lng])).pad(.12))}
 function dayFromDate(now){const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Lisbon',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);if(fmt==='2026-10-02')return'1002';if(fmt==='2026-10-03')return'1003';if(fmt==='2026-10-04')return'1004';return null}
 function allTimedItems(){return Object.entries(schedules).flatMap(([day,s])=>s.items.filter(i=>i.iso).map(i=>({...i,day,date:new Date(i.iso)}))).sort((a,b)=>a.date-b.date)}
-function renderNow(){const now=new Date(),items=allTimedItems(),first=items[0],last=items[items.length-1],card=document.getElementById('nowCard');let label='出发前',title='Lisbon 行程已就绪',sub='10/2 U27628 23:00 抵达 Lisbon；当晚只去 ibis Lisboa José Malhoa 睡觉。',item=null;if(now>=first.date&&now<=last.date){item=items.find(i=>i.date>=now)||last;label='NEXT · 下一步';title=`${item.time} · ${item.title}`;sub=item.sub}else if(now>last.date){label='行程完成';title='Lisbon 段已结束';sub='下一站：Porto。'}const actions=item?.place?`<div class="now-card__actions"><button class="action-btn action-btn--primary" data-now-place="${item.place}">地图定位</button><a class="action-btn" href="${googleMap(places.find(p=>p.id===item.place))}" target="_blank" rel="noopener">Google Maps</a></div>`:'';card.innerHTML=`<div class="now-card__label">${label}</div><h2>${title}</h2><p>${sub}</p>${actions}`;card.querySelector('[data-now-place]')?.addEventListener('click',e=>focusPlace(e.currentTarget.dataset.nowPlace))}
+function renderNow(){const now=new Date(),items=allTimedItems(),first=items[0],last=items[items.length-1],card=document.getElementById('nowCard');let label='出发前',title='里斯本行程已就绪',sub='10/2 U27628 23:00 抵达里斯本；下飞机后直接去 ibis Lisboa José Malhoa 休息。',item=null;if(now>=first.date&&now<=last.date){item=items.find(i=>i.date>=now)||last;label='下一步';title=`${item.time} · ${item.title}`;sub=item.sub}else if(now>last.date){label='行程完成';title='里斯本行程已结束';sub='下一站：波尔图 Porto。'}const actions=item?.place?`<div class="now-card__actions"><button class="action-btn action-btn--primary" data-now-place="${item.place}">地图定位</button><a class="action-btn" href="${googleMap(places.find(p=>p.id===item.place))}" target="_blank" rel="noopener">Google Maps</a></div>`:'';card.innerHTML=`<div class="now-card__label">${label}</div><h2>${title}</h2><p>${sub}</p>${actions}`;card.querySelector('[data-now-place]')?.addEventListener('click',e=>focusPlace(e.currentTarget.dataset.nowPlace))}
 document.querySelectorAll('.day-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.day-tab').forEach(b=>b.classList.remove('is-active'));btn.classList.add('is-active');const day=btn.dataset.day;if(day==='today'){const current=dayFromDate(new Date());renderTimeline(current?[current]:['1002','1003','1004'])}else renderTimeline([day]);fitDay(day)}));
 window.addEventListener('online',()=>document.getElementById('offlineBadge').hidden=true);window.addEventListener('offline',()=>document.getElementById('offlineBadge').hidden=false);document.getElementById('offlineBadge').hidden=navigator.onLine;if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});renderPhotos();renderTimeline();renderNow();
