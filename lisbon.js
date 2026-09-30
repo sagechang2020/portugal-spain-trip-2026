@@ -1,7 +1,7 @@
 const TRIP_YEAR=2026;
 const places=[
-{id:'lis-airport',n:'①',day:'1002',lat:38.7742,lng:-9.1342,name:'里斯本机场',local:'Humberto Delgado Airport · Lisbon Airport',time:'10/2周五 23:00',task:'U27628 抵达里斯本',icon:'✈️'},
-{id:'ibis',n:'②',day:'1002',lat:38.737046,lng:-9.163156,name:'宜必思里斯本若泽马尔霍亚',local:'ibis Lisboa José Malhoa',time:'10/2深夜入住；10/4约08:50退房寄存、12:00左右取行李',task:'两晚住宿 · Praça de Espanha 北厅',icon:'🏨'},
+{id:'lis-airport',n:'①',day:'1001',lat:38.7742,lng:-9.1342,name:'里斯本机场',local:'Humberto Delgado Airport · Lisbon Airport',time:'10/1周四 22:20',task:'U27628 抵达里斯本',icon:'✈️'},
+{id:'ibis',n:'②',day:'1001',lat:38.737046,lng:-9.163156,name:'宜必思里斯本若泽马尔霍亚',local:'ibis Lisboa José Malhoa',time:'10/1周四晚入住；10/4约08:50退房寄存、12:00左右取行李',task:'里斯本住宿点 · Praça de Espanha 北厅',icon:'🏨'},
 {id:'castle',n:'③',day:'1003',lat:38.7139,lng:-9.1335,name:'圣乔治城堡',local:'Castelo de São Jorge',time:'10/3 10:00–11:30',task:'重点景点 · 入内参观',icon:'🏰'},
 {id:'portas',n:'④',day:'1003',lat:38.7118,lng:-9.1303,name:'太阳门观景台',local:'Miradouro das Portas do Sol',time:'10/3约11:35–11:50',task:'短停 · 顺路下坡',icon:'🌇'},
 {id:'luzia',n:'⑤',day:'1003',lat:38.7116,lng:-9.1307,name:'圣卢西亚观景台',local:'Miradouro de Santa Luzia',time:'10/3约11:50–12:10',task:'拍照停留',icon:'📷'},
@@ -20,12 +20,13 @@ const places=[
 ];
 
 const schedules={
-'1002':{label:'10/2 周五',subtitle:'23:00抵达里斯本 · 入住后直接休息',items:[
-{iso:'2026-10-02T21:20:00+01:00',time:'21:20',title:'丰沙尔 FNC 起飞',sub:'easyJet U27628 → LIS 23:00',icon:'✈️',core:true},
-{iso:'2026-10-02T23:00:00+01:00',time:'23:00',title:'里斯本机场 Lisbon Airport',sub:'取行李后直接去酒店',place:'lis-airport',icon:'🧳',core:true},
-{iso:'2026-10-02T23:40:00+01:00',time:'~23:30–23:45',title:'离开到达大厅',sub:'按实际下机和行李速度执行',place:'lis-airport',icon:'🚶'},
-{iso:'2026-10-02T23:50:00+01:00',time:'~23:45–00:10',title:'里斯本机场 → ibis Lisboa José Malhoa',sub:'Uber / 正规出租车直达酒店',place:'ibis',icon:'🚕',core:true},
-{time:'~00:10–00:25',title:'ibis 办理入住 / 洗漱 / 睡觉',sub:'如饿了只简单吃点东西，尽快休息',place:'ibis',icon:'🏨',core:true}]},
+'1001':{label:'10/1 周四',subtitle:'22:20抵达里斯本 · 机场 → ibis → 休息',items:[
+{iso:'2026-10-01T20:35:00+01:00',time:'20:35',title:'丰沙尔 FNC 起飞',sub:'easyJet U27628 → LIS 22:20',icon:'✈️',core:true},
+{iso:'2026-10-01T22:20:00+01:00',time:'22:20',title:'里斯本机场 Lisbon Airport',sub:'计划到达时间；取行李后直接去酒店',place:'lis-airport',icon:'🧳',core:true},
+{iso:'2026-10-01T23:00:00+01:00',time:'约22:50–23:10',title:'机场 → ibis Lisboa José Malhoa',sub:'Uber / 正规出租车直达酒店；不安排夜间景点',place:'ibis',icon:'🚕',core:true},
+{time:'到店后',title:'办理入住 / 洗漱 / 睡觉',sub:'当晚以休息为主，不再安排游览',place:'ibis',icon:'🏨',core:true}]},
+'1002':{label:'10/2 周五',subtitle:'里斯本新增完整白天 · 行程待重新规划',items:[
+{time:'待更新',title:'10/2 里斯本完整白天',sub:'这一天的详细游览方案正在重新规划，暂不作为现场执行版。',icon:'📝',buffer:true}]},
 '1003':{label:'10/3 周六',subtitle:'圣乔治城堡 + Alfama老城 + Belém · 晚上休息',items:[
 {iso:'2026-10-03T08:20:00+01:00',time:'~08:20',title:'起床 / 洗漱',sub:'给深夜抵达后的正常恢复时间',place:'ibis',icon:'🌤️'},
 {iso:'2026-10-03T08:40:00+01:00',time:'08:40',title:'ibis 自助早餐',sub:'08:40–09:20 · 已包含',place:'ibis',icon:'☕',core:true},
@@ -80,7 +81,7 @@ const photos=[
 const map=L.map('map',{zoomControl:true}).setView([38.71,-9.16],12);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
 const markers={};
-function dayClass(day){return day==='1002'?'marker-1002':day==='1003'?'marker-1003':'marker-1004'}
+function dayClass(day){return day==='1001'?'marker-1002':day==='1003'?'marker-1003':'marker-1004'}
 function appleMap(p){return `https://maps.apple.com/?ll=${p.lat},${p.lng}&q=${encodeURIComponent(p.local)}`}
 function googleMap(p){return `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`}
 function uber(p){return `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${p.lat}&dropoff[longitude]=${p.lng}&dropoff[nickname]=${encodeURIComponent(p.local)}`}
@@ -95,11 +96,11 @@ map.fitBounds(allBounds.pad(.06));
 document.getElementById('fitMapBtn').addEventListener('click',()=>map.fitBounds(allBounds.pad(.06)));
 
 function renderPhotos(){document.getElementById('photoGrid').innerHTML=photos.map(p=>`<figure class="photo-card"><img src="${p.src}" alt="${p.title}" loading="lazy" referrerpolicy="no-referrer"><figcaption><span>${p.title}</span><a class="photo-credit" href="${p.source}" target="_blank" rel="noopener">${p.credit}</a></figcaption></figure>`).join('')}
-function renderTimeline(days=['1002','1003','1004']){const html=days.map(d=>{const s=schedules[d];const items=s.items.map(it=>`<div class="timeline-item${it.core?' is-core':''}${it.buffer?' is-buffer':''}" ${it.place?`data-place="${it.place}"`:''}><div class="timeline-time">${it.time}</div><div class="timeline-main"><b>${it.title}</b><small>${it.sub}</small></div><div class="timeline-icon">${it.icon||''}</div></div>`).join('');return `<div class="day-block"><div class="day-heading"><h3>${s.label}</h3><span>${s.subtitle}</span></div><div class="timeline-list">${items}</div></div>`}).join('');document.getElementById('timeline').innerHTML=html;document.querySelectorAll('.timeline-item[data-place]').forEach(el=>el.addEventListener('click',()=>focusPlace(el.dataset.place)))}
+function renderTimeline(days=['1001','1002','1003','1004']){const html=days.map(d=>{const s=schedules[d];const items=s.items.map(it=>`<div class="timeline-item${it.core?' is-core':''}${it.buffer?' is-buffer':''}" ${it.place?`data-place="${it.place}"`:''}><div class="timeline-time">${it.time}</div><div class="timeline-main"><b>${it.title}</b><small>${it.sub}</small></div><div class="timeline-icon">${it.icon||''}</div></div>`).join('');return `<div class="day-block"><div class="day-heading"><h3>${s.label}</h3><span>${s.subtitle}</span></div><div class="timeline-list">${items}</div></div>`}).join('');document.getElementById('timeline').innerHTML=html;document.querySelectorAll('.timeline-item[data-place]').forEach(el=>el.addEventListener('click',()=>focusPlace(el.dataset.place)))}
 function focusPlace(id){const p=places.find(x=>x.id===id);if(!p)return;map.setView([p.lat,p.lng],15,{animate:true});markers[id]?.openPopup();document.querySelector('.map-section')?.scrollIntoView({behavior:'smooth',block:'start'})}
-function fitDay(day){if(day==='today'){map.fitBounds(allBounds.pad(.06));return}const ps=places.filter(p=>p.day===day||(day==='1004'&&['ibis','rossio'].includes(p.id)));if(ps.length)map.fitBounds(L.latLngBounds(ps.map(p=>[p.lat,p.lng])).pad(.12))}
-function dayFromDate(now){const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Lisbon',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);if(fmt==='2026-10-02')return'1002';if(fmt==='2026-10-03')return'1003';if(fmt==='2026-10-04')return'1004';return null}
+function fitDay(day){if(day==='today'){map.fitBounds(allBounds.pad(.06));return}const ps=places.filter(p=>p.day===day||(day==='1004'&&['ibis','rossio'].includes(p.id))||(day==='1001'&&['lis-airport','ibis'].includes(p.id)));if(ps.length)map.fitBounds(L.latLngBounds(ps.map(p=>[p.lat,p.lng])).pad(.12))}
+function dayFromDate(now){const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Lisbon',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);if(fmt==='2026-10-01')return'1001';if(fmt==='2026-10-02')return'1002';if(fmt==='2026-10-03')return'1003';if(fmt==='2026-10-04')return'1004';return null}
 function allTimedItems(){return Object.entries(schedules).flatMap(([day,s])=>s.items.filter(i=>i.iso).map(i=>({...i,day,date:new Date(i.iso)}))).sort((a,b)=>a.date-b.date)}
-function renderNow(){const now=new Date(),items=allTimedItems(),first=items[0],last=items[items.length-1],card=document.getElementById('nowCard');let label='出发前',title='里斯本行程已就绪',sub='10/2 U27628 23:00 抵达里斯本；下飞机后直接去 ibis Lisboa José Malhoa 休息。',item=null;if(now>=first.date&&now<=last.date){item=items.find(i=>i.date>=now)||last;label='下一步';title=`${item.time} · ${item.title}`;sub=item.sub}else if(now>last.date){label='行程完成';title='里斯本行程已结束';sub='下一站：波尔图 Porto。'}const actions=item?.place?`<div class="now-card__actions"><button class="action-btn action-btn--primary" data-now-place="${item.place}">地图定位</button><a class="action-btn" href="${googleMap(places.find(p=>p.id===item.place))}" target="_blank" rel="noopener">Google Maps</a></div>`:'';card.innerHTML=`<div class="now-card__label">${label}</div><h2>${title}</h2><p>${sub}</p>${actions}`;card.querySelector('[data-now-place]')?.addEventListener('click',e=>focusPlace(e.currentTarget.dataset.nowPlace))}
-document.querySelectorAll('.day-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.day-tab').forEach(b=>b.classList.remove('is-active'));btn.classList.add('is-active');const day=btn.dataset.day;if(day==='today'){const current=dayFromDate(new Date());renderTimeline(current?[current]:['1002','1003','1004'])}else renderTimeline([day]);fitDay(day)}));
+function renderNow(){const now=new Date(),items=allTimedItems(),first=items[0],last=items[items.length-1],card=document.getElementById('nowCard');let label='出发前',title='里斯本行程已就绪',sub='10/1 U27628 22:20 抵达里斯本；下飞机后直接去 ibis Lisboa José Malhoa 休息。',item=null;if(now>=first.date&&now<=last.date){item=items.find(i=>i.date>=now)||last;label='下一步';title=`${item.time} · ${item.title}`;sub=item.sub}else if(now>last.date){label='行程完成';title='里斯本行程已结束';sub='下一站：波尔图 Porto。'}const actions=item?.place?`<div class="now-card__actions"><button class="action-btn action-btn--primary" data-now-place="${item.place}">地图定位</button><a class="action-btn" href="${googleMap(places.find(p=>p.id===item.place))}" target="_blank" rel="noopener">Google Maps</a></div>`:'';card.innerHTML=`<div class="now-card__label">${label}</div><h2>${title}</h2><p>${sub}</p>${actions}`;card.querySelector('[data-now-place]')?.addEventListener('click',e=>focusPlace(e.currentTarget.dataset.nowPlace))}
+document.querySelectorAll('.day-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.day-tab').forEach(b=>b.classList.remove('is-active'));btn.classList.add('is-active');const day=btn.dataset.day;if(day==='today'){const current=dayFromDate(new Date());renderTimeline(current?[current]:['1001','1002','1003','1004'])}else renderTimeline([day]);fitDay(day)}));
 window.addEventListener('online',()=>document.getElementById('offlineBadge').hidden=true);window.addEventListener('offline',()=>document.getElementById('offlineBadge').hidden=false);document.getElementById('offlineBadge').hidden=navigator.onLine;if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});renderPhotos();renderTimeline();renderNow();
