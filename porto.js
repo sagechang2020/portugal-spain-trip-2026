@@ -1,7 +1,7 @@
 const places=[
-{id:'campanha',n:'①',day:'1004',lat:41.1488,lng:-8.5853,name:'坎帕尼扬站',local:'Porto Campanhã',time:'10/4 16:48',task:'AP133 抵达 Porto',icon:'🚄'},
+{id:'campanha',n:'①',day:'1004',lat:41.1488,lng:-8.5853,name:'坎帕尼扬站',local:'Porto Campanhã',time:'10/4 14:43',task:'IC621 抵达 Porto',icon:'🚄'},
 {id:'hf',n:'②/⑥/⑧/⑰',day:'1004',lat:41.154591,lng:-8.630506,name:'HF Tuela Porto',local:'HF Tuela Porto',time:'10/4入住；赛后返回；10/5退房寄存/取行李',task:'住宿与行李锚点',icon:'🏨'},
-{id:'mercado',n:'③',day:'1004',lat:41.15584,lng:-8.62916,name:'博姆苏塞苏市场',local:'Mercado Bom Sucesso',time:'10/4 17:35–18:05',task:'比赛前快速晚餐',icon:'🍽️'},
+{id:'mercado',n:'③',day:'1004',lat:41.15584,lng:-8.62916,name:'博姆苏塞苏市场',local:'Mercado Bom Sucesso',time:'10/4约16:20–17:20',task:'比赛前从容吃饭',icon:'🍽️'},
 {id:'casa-metro',n:'④/⑱',day:'1004',lat:41.16094,lng:-8.62830,name:'音乐之家地铁站',local:'Casa da Música Metro',time:'10/4去球场；10/5去机场',task:'Metro 交通锚点',icon:'🚇'},
 {id:'dragao',n:'⑤',day:'1004',lat:41.16176,lng:-8.58393,name:'巨龙球场',local:'Estádio do Dragão',time:'10/4约18:45抵达；19:45开球',task:'Portugal vs Norway · 已购票',icon:'⚽'},
 {id:'petulia',n:'⑦',day:'1005',lat:41.15545,lng:-8.62750,name:'Petúlia 糕点店',local:'Confeitaria Petúlia',time:'10/5 07:45–08:20',task:'Rua Júlio Dinis 775',icon:'☕'},
@@ -17,17 +17,20 @@ const places=[
 {id:'opo',n:'⑲',day:'1005',lat:41.24212,lng:-8.67855,name:'波尔图机场',local:'Francisco Sá Carneiro Airport · OPO',time:'10/5约16:50–17:05抵达；20:15起飞',task:'飞 Madrid',icon:'✈️'}
 ];
 const schedules={
-'1004':{label:'10/4 周日',subtitle:'抵达波尔图 + 葡萄牙 vs 挪威',items:[
-{iso:'2026-10-04T14:00:00+01:00',time:'14:00',title:'里斯本 Santa Apolónia 出发',sub:'AP133 → Porto Campanhã 16:48',icon:'🚄',core:true},
-{iso:'2026-10-04T16:48:00+01:00',time:'16:48',title:'波尔图坎帕尼扬站 Porto Campanhã',sub:'到站后直接去酒店，不折腾公交',place:'campanha',icon:'🚉',core:true},
-{iso:'2026-10-04T16:55:00+01:00',time:'~16:55',title:'坎帕尼扬 Campanhã → HF Tuela',sub:'Uber/Bolt；预计约17:20到',place:'hf',icon:'🚕'},
-{iso:'2026-10-04T17:20:00+01:00',time:'17:20',title:'HF Tuela 办理入住 + 放行李',sub:'只做快速入住，不在房间磨蹭',place:'hf',icon:'🏨',core:true},
-{iso:'2026-10-04T17:35:00+01:00',time:'17:35',title:'博姆苏塞苏市场 Mercado Bom Sucesso 快速晚餐',sub:'到18:05；不排单一摊位长队',place:'mercado',icon:'🍽️'},
-{iso:'2026-10-04T18:05:00+01:00',time:'18:05',title:'步行 → 音乐之家地铁站 Casa da Música',sub:'比赛日开始硬时间链',place:'casa-metro',icon:'🚶'},
-{iso:'2026-10-04T18:20:00+01:00',time:'~18:20',title:'地铁 → 巨龙球场 Estádio do Dragão',sub:'看站内屏幕，乘直达 Estádio do Dragão 的班次',place:'dragao',icon:'🚇',core:true},
-{iso:'2026-10-04T18:45:00+01:00',time:'~18:45',title:'抵达巨龙球场 Estádio do Dragão',sub:'Porta 12 · Setor 14 · Fila 46 · Lugares 10–11',place:'dragao',icon:'🎟️',core:true},
+'1004':{label:'10/4 周日',subtitle:'14:43抵达波尔图 + 葡萄牙 vs 挪威',items:[
+{iso:'2026-10-04T11:30:00+01:00',time:'11:30',title:'里斯本 Santa Apolónia 出发',sub:'IC621 → Porto Campanhã 14:43',icon:'🚄',core:true},
+{iso:'2026-10-04T14:43:00+01:00',time:'14:43',title:'波尔图坎帕尼扬站 Porto Campanhã',sub:'到站后直接去酒店',place:'campanha',icon:'🚉',core:true},
+{iso:'2026-10-04T14:50:00+01:00',time:'~14:50',title:'Campanhã → HF Tuela',sub:'Uber/Bolt；预计15:10左右到',place:'hf',icon:'🚕'},
+{iso:'2026-10-04T15:10:00+01:00',time:'15:10',title:'HF Tuela 办理入住 + 放行李',sub:'不用赶，正常办理入住',place:'hf',icon:'🏨',core:true},
+{iso:'2026-10-04T15:30:00+01:00',time:'15:30–16:15',title:'房间休息 / 整理',sub:'坐一会儿、充电、准备球赛用品',place:'hf',icon:'🛏️'},
+{iso:'2026-10-04T16:20:00+01:00',time:'16:20',title:'博姆苏塞苏市场 Mercado Bom Sucesso',sub:'从容吃到17:20左右；不追单一摊位长队',place:'mercado',icon:'🍽️'},
+{iso:'2026-10-04T17:20:00+01:00',time:'17:20',title:'回酒店 / 最后准备',sub:'到17:45左右，确认球票、手机电量',place:'hf',icon:'🎟️'},
+{iso:'2026-10-04T17:45:00+01:00',time:'17:45',title:'步行 → 音乐之家地铁站 Casa da Música',sub:'开始比赛时间链',place:'casa-metro',icon:'🚶'},
+{iso:'2026-10-04T18:00:00+01:00',time:'~18:00',title:'地铁 → 巨龙球场 Estádio do Dragão',sub:'看站内屏幕，乘直达 Estádio do Dragão 的班次',place:'dragao',icon:'🚇',core:true},
+{iso:'2026-10-04T18:25:00+01:00',time:'约18:25起',title:'巨龙球场周边 / 入场准备',sub:'不着急，先找到 Porta 12',place:'dragao',icon:'🏟️'},
+{iso:'2026-10-04T18:45:00+01:00',time:'~18:45',title:'正式入场',sub:'Porta 12 · Setor 14 · Fila 46 · Lugares 10–11',place:'dragao',icon:'🎟️',core:true},
 {iso:'2026-10-04T19:45:00+01:00',time:'19:45',title:'葡萄牙 vs 挪威 Portugal vs Norway',sub:'官方票已购 ×2 · 比赛硬锚点',place:'dragao',icon:'⚽',core:true},
-{time:'赛后',title:'地铁 → 音乐之家 Casa da Música → HF Tuela',sub:'散场优先地铁，避免打车拥堵',place:'hf',icon:'🚇'}]},
+{time:'赛后',title:'地铁 → Casa da Música → HF Tuela',sub:'散场优先地铁，避免打车拥堵',place:'hf',icon:'🚇'}]},
 '1005':{label:'10/5 周一',subtitle:'波尔图老城 + Gaia + Taylor’s 酒窖 + OPO机场',items:[
 {iso:'2026-10-05T07:45:00+01:00',time:'07:45',title:'Petúlia 糕点店 Confeitaria Petúlia 早餐',sub:'07:45–08:20；若不想出门也可改酒店附近简单吃',place:'petulia',icon:'☕'},
 {iso:'2026-10-05T08:20:00+01:00',time:'08:20',title:'回 HF Tuela 退房 + 寄存行李',sub:'贵重物随身；空手游览',place:'hf',icon:'🧳',core:true},
