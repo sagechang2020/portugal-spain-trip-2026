@@ -84,10 +84,14 @@ function dayClass(day){return day==='1002'||day==='1001'?'marker-1002':day==='10
 function appleMap(p){return `https://maps.apple.com/?ll=${p.lat},${p.lng}&q=${encodeURIComponent(p.local)}`}
 function googleMap(p){return `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`}
 function uber(p){return `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${p.lat}&dropoff[longitude]=${p.lng}&dropoff[nickname]=${encodeURIComponent(p.local)}`}
+
+const rideCopyNames={"lis-airport":"Aeroporto Humberto Delgado","ibis":"ibis Lisboa José Malhoa","castle":"Castelo de São Jorge","jeronimos":"Mosteiro dos Jerónimos","purex":"Purex Clube, Rua das Salgadeiras 28","friends":"Friends Bairro Alto, Travessa da Água da Flor 17","bar106":"Bar 106, Rua de São Marçal 106","santa":"Lisboa Santa Apolónia"};
+function copyRidePlace(id){const text=rideCopyNames[id];if(!text)return;const done=()=>{const el=document.querySelector(`[data-copy-place="${id}"]`);if(el){const old=el.textContent;el.textContent='已复制';setTimeout(()=>{el.textContent=old},1400)}};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text,done))}else fallbackCopy(text,done)}
+function fallbackCopy(text,done){const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}finally{document.body.removeChild(ta)}}
 const uberIds=new Set(['lis-airport','ibis','castle','jeronimos','purex','friends','bar106','santa']);
 places.forEach(p=>{
   const icon=L.divIcon({className:'leaflet-div-icon',html:`<div class="num-marker ${dayClass(p.day)}">${p.n.split('/')[0]}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
-  const popup=`<div class="popup-title">${p.icon} ${p.name}<br>${p.local}</div><div class="popup-sub">${p.time}<br>${p.task}</div><div class="popup-actions"><a href="${appleMap(p)}" target="_blank" rel="noopener">Apple Maps</a><a href="${googleMap(p)}" target="_blank" rel="noopener">Google Maps</a>${uberIds.has(p.id)?`<a href="${uber(p)}" target="_blank" rel="noopener">叫 Uber</a><a href="https://bolt.eu/en/rides/" target="_blank" rel="noopener">叫 Bolt</a>`:''}</div>`;
+  const popup=`<div class="popup-title">${p.icon} ${p.name}<br>${p.local}</div><div class="popup-sub">${p.time}<br>${p.task}</div><div class="popup-actions"><a href="${appleMap(p)}" target="_blank" rel="noopener">Apple Maps</a><a href="${googleMap(p)}" target="_blank" rel="noopener">Google Maps</a>${uberIds.has(p.id)?`<a href="${uber(p)}" target="_blank" rel="noopener">叫 Uber</a><a href="https://bolt.eu/en/rides/" target="_blank" rel="noopener">叫 Bolt</a><a href="#" data-copy-place="${p.id}" onclick="copyRidePlace('${p.id}');return false">复制地点</a>`:''}</div>`;
   markers[p.id]=L.marker([p.lat,p.lng],{icon}).addTo(map).bindPopup(popup,{maxWidth:290});
 });
 const allBounds=L.latLngBounds(places.map(p=>[p.lat,p.lng]));
